@@ -1,0 +1,143 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>@ViewData["Title"] - DevBoost</title>
+    <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css" />
+    <link rel="stylesheet" href="~/css/site.css" asp-append-version="true" />
+    <link rel="stylesheet" href="~/DevBoost.styles.css" asp-append-version="true" />
+    <link rel="icon" type="image/ico" href="~/favico.ico" sizes="32x32">
+
+    <link rel ="stylesheet" href ="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" />
+    <style>
+        .mynav_navbar{
+            overflow:hidden;
+            font-family:Arial,Helvetica,sans-serif;
+        }
+
+        .mynav_navbar a{
+            float:left;
+            font-size:16px;
+            color:white;
+            text-align:center;
+            padding: 14px 16px;
+            text-decoration: none;
+        }
+
+        .mynav_dropdown{
+            float:left;
+            overflow:hidden;
+        }
+        
+        .mynav_dropdown .mynav_dropbtn{
+            font-size: 16px;
+            border:none;
+            outline:none;
+            color:white;
+            padding: 14px 16px;
+            background-color:inherit;
+            font-family:inherit;
+            margin:0;
+        }
+
+        .mynav_navbar a:hover, .mynav_dropdown:hover .mynav_dropbtn{
+            background-color:red;
+        }
+
+        .mynav_dropdown-content{
+            display:none;
+            position: absolute;
+            background-color: #f9f9f9;
+            min-width: 160px;
+            box-shadow: 0px 8px 16 px 0 px rgba(0,0,0,0.2);
+            z-index:1;
+        }
+
+        .mynav_dropdown-content a{
+            float:none;
+            color: black;
+            padding: 12px 16px;
+            text-decoration: none;
+            display:block;
+            text-align:left;
+        }
+
+        .mynav_dropdown-content a:hover{
+            background-color: #ddd;
+        }
+
+        .mynav_dropdown:hover .mynav_dropdown-content{
+            display:block;
+        }
+
+    </style>
+</head>
+<body>
+    <header>
+        <nav class="navbar navbar-expand-sm navbar-toggleable-sm navbar-light bg-white border-bottom box-shadow mb-3">
+            <div class="container-fluid">
+                <a class="navbar-brand" asp-area="" asp-controller="Home" asp-action="Index">DevBoost</a>
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target=".navbar-collapse" aria-controls="navbarSupportedContent"
+                        aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="navbar-collapse collapse d-sm-inline-flex justify-content-between">
+                   @* <ul class="navbar-nav flex-grow-1">
+                        <li class="nav-item">
+                            <a class="nav-link text-dark" asp-area="" asp-controller="Home" asp-action="Courses">Courses</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link text-dark" asp-area="" asp-controller="Home" asp-action="Exercises">Exercises</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link text-dark" asp-area="" asp-controller="Home" asp-action="Community">Community</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link text-dark" asp-area="" asp-controller="Home" asp-action="Pricing">Pricing</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link text-dark" asp-area="" asp-controller="Home" asp-action="Privacy">Privacy</a>
+                        </li>
+                    </ul>*@
+                </div>
+                <div class = "mynav_navbar">
+                     <a class="nav-link text-dark" asp-area="" asp-controller="Home" asp-action="Courses">Courses</a>
+                     <a class="nav-link text-dark" asp-area="" asp-controller="Home" asp-action="Exercises">Exercises</a>
+                     <a class="nav-link text-dark" asp-area="" asp-controller="Home" asp-action="Pricing">Pricing</a>
+                        
+                    <div class = "mynav_dropdown">
+                        <button class = "mynav_dropbtn">
+                            Community
+                            <i class = "fa fa-caret-down"></i>
+                        </button>
+                        <div class = "mynav_dropdown-content">
+                            <a href = "#">Discord</a>
+                            <a href = "#">Instagram</a>
+                            <a href = "#">GitHub</a>
+                            <a href = "#">Twitter</a>
+                        </div>
+                    </div>
+                    <a class="nav-link text-dark" asp-area="" asp-controller="Home" asp-action="Privacy">Privacy</a>
+                    <partial name="_LoginPartial" />
+                </div>
+            </div>
+        </nav>
+    </header>
+    <div class="container">
+        <main role="main" class="pb-3">
+            @RenderBody()
+        </main>
+    </div>
+
+    <footer class="border-top footer text-muted">
+        <div class="container">
+            &copy; 2023 - DevBoost - <a asp-area="" asp-controller="Home" asp-action="Privacy">Privacy</a>
+        </div>
+    </footer>
+    <script src="~/lib/jquery/dist/jquery.min.js"></script>
+    <script src="~/lib/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="~/js/site.js" asp-append-version="true"></script>
+    @await RenderSectionAsync("Scripts", required: false)
+</body>
+</html>
