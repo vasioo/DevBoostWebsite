@@ -14,6 +14,7 @@
         .mynav_navbar{
             overflow:hidden;
             font-family:Arial,Helvetica,sans-serif;
+            float:left;
         }
 
         .mynav_navbar a{
@@ -82,29 +83,15 @@
                         aria-expanded="false" aria-label="Toggle navigation">
                     <span class="navbar-toggler-icon"></span>
                 </button>
-                <div class="navbar-collapse collapse d-sm-inline-flex justify-content-between">
-                   @* <ul class="navbar-nav flex-grow-1">
-                        <li class="nav-item">
-                            <a class="nav-link text-dark" asp-area="" asp-controller="Home" asp-action="Courses">Courses</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link text-dark" asp-area="" asp-controller="Home" asp-action="Exercises">Exercises</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link text-dark" asp-area="" asp-controller="Home" asp-action="Community">Community</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link text-dark" asp-area="" asp-controller="Home" asp-action="Pricing">Pricing</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link text-dark" asp-area="" asp-controller="Home" asp-action="Privacy">Privacy</a>
-                        </li>
-                    </ul>*@
-                </div>
-                <div class = "mynav_navbar">
+            
+                <div class="mynav_navbar">
                      <a class="nav-link text-dark" asp-area="" asp-controller="Home" asp-action="Courses">Courses</a>
                      <a class="nav-link text-dark" asp-area="" asp-controller="Home" asp-action="Exercises">Exercises</a>
                      <a class="nav-link text-dark" asp-area="" asp-controller="Home" asp-action="Pricing">Pricing</a>
+                    <a class="nav-link img" asp-area="" asp-controller="Home" asp-action="Cart">
+                        <img src="D:\DevBoost\cart.jfif" alt="none" style="width:auto" />
+                    </a>
+                        
                         
                     <div class = "mynav_dropdown">
                         <button class = "mynav_dropbtn">
@@ -112,10 +99,10 @@
                             <i class = "fa fa-caret-down"></i>
                         </button>
                         <div class = "mynav_dropdown-content">
-                            <a href = "#">Discord</a>
-                            <a href = "#">Instagram</a>
-                            <a href = "#">GitHub</a>
-                            <a href = "#">Twitter</a>
+                            <a target = "_blank" href="https://discord.com/">Discord</a>
+                            <a target="_blank" href="https://www.instagram.com/">Instagram</a>
+                            <a target="_blank" href="https://github.com/vasioo/DevBoostWebsite">GitHub</a>
+                            <a target="_blank" href="https://twitter.com/">Twitter</a>
                         </div>
                     </div>
                     <a class="nav-link text-dark" asp-area="" asp-controller="Home" asp-action="Privacy">Privacy</a>
@@ -141,3 +128,13 @@
     @await RenderSectionAsync("Scripts", required: false)
 </body>
 </html>
+
+    <style>
+        .cart{
+        background: url(D:\DevBoost\cart.jfif) no-repeat;
+        background-size: 40px 40px;
+        height: 40px;
+        margin: 5px;
+        width: 40px;
+        }
+    </style>
