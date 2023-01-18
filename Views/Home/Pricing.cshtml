@@ -4,135 +4,143 @@
 
 <style>
     * {
-        /*margin: 0;*/
-        object-fit: cover;
-        /*padding: 0;*/
-        /*box-sizing: border-box;*/
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
         font-family: 'Poppins',sans-serif;
+        background: #000000;
     }
 
-    .container {
+    .my_container {
         width: 100%;
         min-height: 100vh;
-        background: #45227e;
+        background: #000000;
     }
 
-        .container h2 {
+        .my_container h2 {
             color: #fff;
             font-size: 32px;
-            padding: 50px 0;
+            padding: 80px 0;
             text-align: center;
         }
 
-    .price-row {
+    .my_price-row {
         width: 90%;
         max-width: 1100px;
         margin: auto;
         display: grid;
-        grid-template-columns: repeat(auto-fit,minmax(250px,1ft));
-        grid-gap: 25px;
+        grid-template-columns: repeat(auto-fit,minmax(250px,1fr));
+        grid-gap: 35px;
     }
 
-    .price-col {
-        background: #1f283b;
+    .my_price-col {
+        background: #2D033B;
         padding: 10% 15%;
         border-radius: 10px;
         color: #fff;
         text-align: center;
     }
 
-        .price-col p {
+        .my_price-col p {
             font-size: 22px;
+            background: #2D033B;
         }
 
-        .price-col h3 {
+        .my_price-col h3 {
             font-size: 44px;
             margin: 20px 0 40px;
             font-weight: 500;
+            background: #2D033B;
         }
 
-            .price-col h3 span {
+            .my_price-col h3 span {
                 font-size: 16px;
+                background: #2D033B;
             }
 
-        .price-col ul {
+        .my_price-col ul {
             text-align: left;
             margin: 20px 0;
             color: #ddd;
             list-style: none;
+            background: #2D033B;
+            padding:0;
         }
 
-            .price-col ul li {
-                margin: 15px 0;
+            .my_price-col ul li {
+                margin: 15px 0px;
+                background: #2D033B;
             }
 
-                .price-col ul li ::before {
+                .my_price-col ul li::before {
                     content: '\2022';
-                    color: #e33058;
+                    color: #E5B8F4;
                     font-weight: bold;
                     margin-right: 8px;
                 }
 
-        .price-col button {
+        .my_price-col button {
             width: 100%;
             padding: 14px 0;
             background: transparent;
             color: #fff;
             font-size: 15px;
-            border: 1px solid #e33058;
+            border: 1px solid #b16cc8;
             border-radius: 6px;
             margin-top: 30px;
             cursor: pointer;
-            transition: background 0.5s;
+            transition: background 0.7s;
         }
 
-            .price-col button :hover {
-                background: #e33058;
+            .my_price-col button:hover {
+                background: #b16cc8;
             }
-
 </style>
 
 
-<div class="container">
+<div class="my_container">
     <h2>Choose your plan</h2>
 
-    <div class="price-row">
+    <div class="my_price-row">
 
-        <div class="price-col">
-            <p>Starter</p>
-            <h3>20$ <span>/ month</span></h3>
+        <div class="my_price-col">
+            <p>Beginner</p>
+            <h3>9.99$ <span>/ one-time</span></h3>
             <ul>
-                <li>1</li>
-                <li>2</li>
-                <li>3</li>
-                <li>4</li>
-                <li>5</li>
+                <li>HTML Course</li>
+                <li>CSS Course</li>
+                <li>Limited Access to Exercises</li>
+                <li>Pre-recorded lectures</li>
+                <li>Introduction to programming with C#</li>
+                <li>More advanced programming</li>
             </ul>
             <button>Add To Cart</button>
         </div>
 
-        <div class="price-col">
-            <p>Mid</p>
-            <h3>20$ <span>/ month</span></h3>
+        <div class="my_price-col">
+            <p>Intermediate</p>
+            <h3>17.98$ <span>/ month</span></h3>
             <ul>
-                <li>1</li>
-                <li>2</li>
-                <li>3</li>
-                <li>4</li>
-                <li>5</li>
+                <li>Object Oriented Programming</li>
+                <li>Introduction to Algorithms</li>
+                <li>Introduction to Data Structures</li>
+                <li>Introduction to Javascript</li>
+                <li>High-level C#</li>
+                <li>Introduction to ASP.NET</li>
             </ul>
             <button>Add To Cart</button>
         </div>
 
-        <div class="price-col">
+        <div class="my_price-col">
             <p>Proffesional</p>
-            <h3>20$ <span>/ month</span></h3>
+            <h3>49.95$ <span>/ month</span></h3>
             <ul>
-                <li>1</li>
-                <li>2</li>
-                <li>3</li>
-                <li>4</li>
-                <li>5</li>
+                <li>Advanced DS and Algorithms</li>
+                <li>More advanced JS</li>
+                <li>Bootstrap</li>
+                <li>ReactJS</li>
+                <li>Git/GitHub</li>
+                <li>Docker & Azure</li>
             </ul>
             <button>Add To Cart</button>
         </div>
