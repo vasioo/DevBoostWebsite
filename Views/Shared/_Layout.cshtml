@@ -27,6 +27,7 @@
 
         .entering a:hover{
                 background-color: #2D033B;
+                border-radius: 6px;
                 color:white;
             }
 
@@ -67,6 +68,7 @@
 
             .mynav_navbar a:hover, .mynav_dropdown:hover .mynav_dropbtn {
                 background-color: #2D033B;
+                border-radius: 6px;
                 font-size: 20px;
                 color: white;
             }
@@ -75,8 +77,9 @@
             display: none;
             position: absolute;
             background-color: #f9f9f9;
-            min-width: 160px;
-            box-shadow: 0px 8px 16 px 0 px rgba(0,0,0,0.2);
+            border-radius: 6px;
+            min-width: 133px;
+            box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
             z-index: 1;
             font-size: 20px;
             color: white;
@@ -93,7 +96,7 @@
             }
 
                 .mynav_dropdown-content a:hover {
-                    background-color: #3F0071;
+                    background-color: #2D033B;
                     color: white;
                 }
 
@@ -101,7 +104,6 @@
             display: block;
             color: white;
         }
-
     </style>
 </head>
 <body class="bg-black">
@@ -120,10 +122,7 @@
                         <a class="nav-link text-dark" asp-area="" asp-controller="Home" asp-action="Pricing">Pricing</a>
 
                         <div class="mynav_dropdown">
-                            <button class="mynav_dropbtn">
-                                Community
-                                <i class="fa fa-caret-down"></i>
-                            </button>
+                            <button  class="mynav_dropbtn">Community</button>
                             <div class="mynav_dropdown-content">
                                 <a target="_blank" href="https://discord.com/">Discord</a>
                                 <a target="_blank" href="https://www.instagram.com/">Instagram</a>

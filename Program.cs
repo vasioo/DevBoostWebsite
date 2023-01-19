@@ -1,6 +1,8 @@
 using DevBoost.Data;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.EntityFrameworkCore;
+using Stripe;
+using System.Configuration;
 
 namespace DevBoost
 {
@@ -27,6 +29,8 @@ namespace DevBoost
             var app = builder.Build();
 
             // Configure the HTTP request pipeline.
+
+            //StripeConfiguration.SetApiKey(Configuration.GetSection("Stripe")["SecretKey"]);
             if (app.Environment.IsDevelopment())
             {
                 app.UseMigrationsEndPoint();
