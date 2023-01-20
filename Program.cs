@@ -30,7 +30,6 @@ namespace DevBoost
 
             // Configure the HTTP request pipeline.
 
-            //StripeConfiguration.SetApiKey(Configuration.GetSection("Stripe")["SecretKey"]);
             if (app.Environment.IsDevelopment())
             {
                 app.UseMigrationsEndPoint();
