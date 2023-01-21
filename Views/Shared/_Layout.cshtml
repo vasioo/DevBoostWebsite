@@ -12,6 +12,9 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" />
     <style>
 
+        .mynav_links{
+            color:white;
+        }
         *{
             background-color: #000000;
             color: white;
@@ -53,6 +56,7 @@
             overflow: hidden;
             font-size: 20px;
             color: white;
+            background:#000000;
         }
 
             .mynav_dropdown .mynav_dropbtn {
@@ -64,6 +68,7 @@
                 background-color: inherit;
                 font-family: inherit;
                 margin: 0;
+                background:#000000;
             }
 
             .mynav_navbar a:hover, .mynav_dropdown:hover .mynav_dropbtn {
@@ -83,6 +88,7 @@
             z-index: 1;
             font-size: 20px;
             color: white;
+            background: #000000;
         }
 
             .mynav_dropdown-content a {
@@ -93,6 +99,7 @@
                 display: block;
                 font-size: 20px;
                 text-align: left;
+                background: #000000;
             }
 
                 .mynav_dropdown-content a:hover {
@@ -103,6 +110,7 @@
         .mynav_dropdown:hover .mynav_dropdown-content {
             display: block;
             color: white;
+            background: #000000;
         }
     </style>
 </head>
@@ -110,16 +118,16 @@
     <header>
         <nav class="navbar navbar-expand-sm navbar-toggleable-sm navbar-light bg-black border-bottom box-shadow mb-3">
             <div class="container-fluid">
-                <a class="navbar-brand" asp-area="" asp-controller="Home" asp-action="Index">DevBoost</a>
+                <a class="navbar-brand text-white" asp-area="" asp-controller="Home" asp-action="Index">DevBoost</a>
                 <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target=".navbar-collapse" aria-controls="navbarSupportedContent"
                         aria-expanded="false" aria-label="Toggle navigation">
                     <span class="navbar-toggler-icon"></span>
                 </button>
                 <div class="navbar-collapse collapse d-sm-inline-flex justify-content-between">
                     <div class="mynav_navbar">
-                        <a class="nav-link text-dark" asp-area="" asp-controller="Home" asp-action="Courses">Courses</a>
-                        <a class="nav-link text-dark" asp-area="" asp-controller="Home" asp-action="Exercises">Exercises</a>
-                        <a class="nav-link text-dark" asp-area="" asp-controller="Home" asp-action="Pricing">Pricing</a>
+                        <a class="nav-link text-white" asp-area="" asp-controller="Home" asp-action="Courses">Courses</a>
+                        <a class="nav-link text-white" asp-area="" asp-controller="Home" asp-action="Exercises">Exercises</a>
+                        <a class="nav-link text-white" asp-area="" asp-controller="Home" asp-action="Pricing">Pricing</a>
 
                         <div class="mynav_dropdown">
                             <button  class="mynav_dropbtn">Community</button>
