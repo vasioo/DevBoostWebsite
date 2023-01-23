@@ -18,6 +18,14 @@
     <PackageReference Include="Microsoft.EntityFrameworkCore.SqlServer" Version="6.0.10" />
     <PackageReference Include="Microsoft.EntityFrameworkCore.Tools" Version="6.0.10" />
     <PackageReference Include="Stripe.net" Version="41.5.0" />
+    <PackageReference Include="System.CodeDom" Version="7.0.0" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Folder Include="Areas\Admin\" />
+    <Folder Include="Areas\Identity\Pages\Intermediate\" />
+    <Folder Include="Areas\Identity\Pages\Beginner\" />
+    <Folder Include="Areas\Identity\Pages\Professional\" />
   </ItemGroup>
 
 </Project>
