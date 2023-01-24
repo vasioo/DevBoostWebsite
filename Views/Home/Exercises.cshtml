@@ -1,9 +1,35 @@
 ﻿@{
     ViewData["Title"] = "Exercises";
 }
-<h1>@ViewData["Title"]</h1>
+<style>
+    #categories {
+        font-size: x-large;
+    }
 
-<p>Practice your skills with our modified page</p>
+    .categories {
+        display: block;
+    }
 
+    #main{
+        text-align:center;
+    }
+</style>
 
-//https://rapidapi.com/UnlimitedAPI/api/c-sharp-code-compiler/
+<h1>Practice your skills with our modified page</h1>
+<a target="_blank" href="https://dotnetfiddle.net/">
+    Click here to be redirected to an online compiler
+</a>
+
+<div class="col-md-5" id="main">
+    Categories
+    <div id="categories" class="list-group">
+        <a class="list-group-item" asp-area="" asp-controller="Exercises" asp-action="HTMLCSS">HTML & CSS</a>
+        <a class="list-group-item" asp-area="" asp-controller="Exercises" asp-action="JavascriptBeginning">Javascript Beginning</a>
+        <a class="list-group-item" asp-area="" asp-controller="Exercises" asp-action="CSharpHigh">High Level C#</a>
+        <a class="list-group-item" asp-area="" asp-controller="Exercises" asp-action="ASP">ASP.NET</a>
+        <a class="list-group-item" asp-area="" asp-controller="Exercises" asp-action="DSA">Data Structures & Algorithms</a>
+        <a class="list-group-item" asp-area="" asp-controller="Exercises" asp-action="JavascriptHigh">Advanced Javascript</a>
+        <a class="list-group-item" asp-area="" asp-controller="Exercises" asp-action="Bootstrap">Bootstrap</a>
+        <a class="list-group-item" asp-area="" asp-controller="Exercises" asp-action="ReactJS">ReactJS</a>
+    </div>
+</div>
