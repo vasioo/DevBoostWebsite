@@ -1,6 +1,27 @@
 ﻿@{
-    ViewData["Title"] = "Help";
+    ViewBag.Title = "Help";
 }
-<h1>Write me an email</h1>
+<h2> Help </h2>
+<br />
+<br />
 
-@*TODO:Create a form for contacts*@
+@if (ViewBag.Error != null)
+{
+    <h2> @ViewBag.Error </h2>
+}
+
+
+<form method="post" action="Help">
+    <div class="container">
+        <span class="form-control-static"> Receiver: </span>
+        <input class="form-control" type="text" name="receiver" />
+        <br />
+        <span class="form-control-static">
+            Subject:
+        </span>
+        <input class="form-control" type="text" name="subject" /> <br />
+        <span class="form-control-static"> Message: </span>
+        <input class="form-control" type="text" name="message" />
+        <br /> <input class="btn btn-primary" type="submit" value="Send" />
+    </div>
+</form>  

@@ -1,6 +1,8 @@
 ﻿using DevBoost.Models;
 using Microsoft.AspNetCore.Mvc;
 using System.Diagnostics;
+using System.Net.Mail;
+using System.Net;
 
 namespace DevBoost.Controllers
 {
@@ -37,14 +39,14 @@ namespace DevBoost.Controllers
         {
             return View();
         }
-        
+
+        [HttpGet]
         public IActionResult Help()
         {
             return View();
         }
-        
-       
 
+        
         [ResponseCache(Duration = 0, Location = ResponseCacheLocation.None, NoStore = true)]
         public IActionResult Error()
         {
