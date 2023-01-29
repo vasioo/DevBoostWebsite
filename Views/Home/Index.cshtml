@@ -2,12 +2,136 @@
     ViewData["Title"] = "Home Page";
 }
 
-<div class="text-center" >
-     <h1>Are you a beginner trying to learn coding?</h1>
-     <h4>Or maybe trying to upgrade your skills</h4>
+<style>
 
-     <h3>Doesn't matter, you came to the right place</h3>
+    .headers {
+        color: Pink;
+        font-family: 'Tangerine';
+        font-size: 75px;
+        margin: 10px 0 0 -400px;
+        white-space: nowrap;
+        overflow: hidden;
+        width: 30em;
+        animation: type 5s steps(60, end);
+    }
 
-     <p>This is a website I created when I was a beginner 
-         so if someone knows how to learn properly, it has to be me!</p>
+
+    @@-webkit-keyframes type {
+        from {
+            width: 0;
+        }
+    }
+
+    .smallHeader {
+        color: Pink;
+        font-family: 'Tangerine';
+        font-size: 65px;
+        margin: 10px 0 0 -420px;
+        white-space: nowrap;
+        overflow: hidden;
+        width: 30em;
+        animation: type 4s steps(60, end);
+    }
+
+    @@-webkit-keyframes type {
+        from {
+            width: 0;
+        }
+    }
+
+    #aboutMe {
+        align-items: start;
+        position: absolute;
+        font-family: 'Tangerine';
+        font-size: 40px;
+        bottom: 180px;
+        left: 80px;
+        white-space: nowrap;
+        overflow: hidden;
+        border-right: .15em solid pink;
+    }
+
+    #aboutMeHeader {
+        padding-top: 190px;
+        left:350px;
+        position: absolute;
+        font-size: 52px;
+        font-family: 'Tangerine';
+        color:pink;
+    }
+
+ #aboutMe{
+  width: 17.5em;
+  opacity: 0;
+  -webkit-animation: type2 2s steps(40, end);
+  animation: type2 2s steps(40, end);
+  -webkit-animation-delay: 2s;
+  animation-delay: 2s;
+  -webkit-animation-fill-mode: forwards;
+  animation-fill-mode: forwards;
+}
+
+
+@@-webkit-keyframes type2 {
+  0% {
+    width: 0;
+  }
+  1% {
+    opacity: 1;
+  }
+  99.9% {
+    border-right: .15em solid pink;
+  }
+  100% {
+    opacity: 1;
+    border: none;
+  }
+}
+
+@@-webkit-keyframes type2 {
+  0% {
+    width: 0;
+  }
+  1% {
+    opacity: 1;
+  }
+  99.9% {
+    border-right: .15em solid pink;
+  }
+  100% {
+    opacity: 1;
+    border: none;
+  }
+}
+
+
+@@-webkit-keyframes blink {
+  50%{
+    border-color: transparent;
+  }
+}
+@@-webkit-keyframes blink {
+  50%{
+    border-color: tranparent;
+  }
+}
+
+</style>
+
+<div class="text-center">
+    <link href='https://fonts.googleapis.com/css?family=Tangerine' rel='stylesheet'>
+    <h1 class="headers">Are you a beginner trying to learn coding?</h1>
+    <h4 class="smallHeader">If you are I can help you</h4>
+
+    <h2 id="aboutMeHeader">
+        About me
+    </h2>
+
+    <p id="aboutMe">
+        I am a student from the small Eastern European Country -> Bulgaria.<br />
+        17 Years of age and has been learning coding for almost 2 years.<br />
+        Though it seems like a lot, it is not.<br />
+        Because it was really hard to find a mentorship/program.<br />
+        So... I created this website to help people in my situation!
+    </p>
 </div>
