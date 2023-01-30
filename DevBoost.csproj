@@ -9,6 +9,7 @@
 
   <ItemGroup>
     <None Include="wwwroot\cart.jfif" />
+    <None Include="wwwroot\houserenting.png" />
   </ItemGroup>
 
   <ItemGroup>
