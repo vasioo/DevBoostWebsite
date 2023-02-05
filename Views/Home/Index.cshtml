@@ -133,7 +133,18 @@
         overflow: hidden;
         box-shadow: 0 0 30px rgba(0, 0, 0, 0.3);
         border-radius:2px;
+        animation: fadeInAnimation ease 12s;
+        animation-iteration-count: 1;
+        animation-fill-mode: forwards;
     }
+    @@keyframes fadeInAnimation {
+    0% {
+        opacity: 0;
+    }
+    100% {
+        opacity: 1;
+     }
+}
 
         #slider ul {
             position: relative;
@@ -184,6 +195,16 @@
         #slider #next {
             right: 10px;
         }
+
+    #myprojects{
+        position:fixed;
+        color: Pink;
+        font-size: 65px;
+        font-family: 'Tangerine';
+        right: 365px;
+        bottom: 450px;
+        padding:30px;
+        }
 </style>
 
 <div class="text-center">
@@ -203,9 +224,11 @@
         So... I created this website to help people in my situation!
     </p>
 
+
+    <h1 id="myprojects">My projects</h1>
+
     <div id="slider">
         <ul id="slideWrap">
-            <li><a target="_blank" href="https://github.com/vasioo"><img src="~/Screenshot 2023-02-02 202032.png" alt="" /></a></li>
             <li><a target="_blank" href="https://github.com/vasioo/HouseRentingSystem"><img src="https://user-images.githubusercontent.com/78680789/212486964-021013d6-8fbb-4ce5-9be4-ef3e4bb2ff30.png" alt=""></a></li>
             <li><a target="_blank" href="https://github.com/vasioo/ForumApplication"><img src="https://user-images.githubusercontent.com/78680789/212485639-f84c2104-26b5-4ba4-ba28-69ebce359aea.png" alt=""></a></li>
             <li><a target="_blank" href="https://github.com/vasioo/Calculator"><img src="https://user-images.githubusercontent.com/78680789/211637224-8760d336-5f82-4170-b306-d10d4734e8ca.png" alt=""></a></li>

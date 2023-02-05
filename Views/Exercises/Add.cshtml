@@ -1,0 +1,31 @@
+﻿@model ExerciseFormModel
+
+<div class="row">
+    <div class="col-sm-12 offset-lg-2 col-lg-8 offset-xl-3 col-xl-6">
+        <form method="post">
+            <div class="form-group">
+                <label asp-for="Title"></label>
+                <input asp-for="Title" class="form-control" placeholder="Title...">
+                <span asp-validation-for="Title" class="small text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Description"></label>
+                <textarea asp-for="Description" rows="4" class="form-control" placeholder="Two bedrooms..."></textarea>
+                <span asp-validation-for="Description" class="small text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Input"></label>
+                <input asp-for="Input" class="form-control" placeholder="Input: ">
+                <span asp-validation-for="Input" class="small text-danger"></span>
+            </div>
+           <div class="form-group">
+                <label asp-for="Output"></label>
+                <input asp-for="Output" class="form-control" placeholder="Output: ">
+                <span asp-validation-for="Output" class="small text-danger"></span>
+            </div>
+            <div class="text-center">
+                <input class="btn btn-primary mt-3" type="submit" value="Save" />
+            </div>
+        </form>
+    </div>
+</div>
