@@ -59,6 +59,11 @@ namespace DevBoost.Controllers
         public IActionResult ReactJS()
         {
             return View();
+        } 
+        
+        public IActionResult Add()
+        {
+            return View();
         }
     }
 }

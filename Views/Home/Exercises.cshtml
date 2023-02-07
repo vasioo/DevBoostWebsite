@@ -10,18 +10,44 @@
         display: block;
     }
 
-    #main{
-        text-align:center;
+    #main {
+        text-align: center;
+        padding-bottom: 50px;
     }
+
+    h1 {
+        text-align: center;
+    }
+
+    #maintitle {
+        padding-top: 50px;
+    }
+
+    .list-group-item:hover {
+        color: purple;
+    }
+
+    #addbtn{
+        padding-top: 20px;
+        
+
+    }
+
+    #addbtn button{
+        width: 250px;
+        height: 50px;
+        background:purple;
+    }
+
+        #addbtn button:hover{
+            background:red;
+        }
 </style>
 
 <h1>Practice your skills with our modified page</h1>
-<a target="_blank" href="https://dotnetfiddle.net/">
-    Click here to be redirected to an online compiler
-</a>
 
 <div class="col-md-5" id="main">
-    Categories
+    <h1 id="maintitle">Categories</h1>
     <div id="categories" class="list-group">
         <a class="list-group-item" asp-area="" asp-controller="Exercises" asp-action="HTMLCSS">HTML & CSS</a>
         <a class="list-group-item" asp-area="" asp-controller="Exercises" asp-action="JavascriptBeginning">Javascript Beginning</a>
@@ -32,4 +58,8 @@
         <a class="list-group-item" asp-area="" asp-controller="Exercises" asp-action="Bootstrap">Bootstrap</a>
         <a class="list-group-item" asp-area="" asp-controller="Exercises" asp-action="ReactJS">ReactJS</a>
     </div>
+
 </div>
+<div id="addbtn">
+        <button type="button" onclick="location.href='@Url.Action("Add","Exercises")'">Add a task</button>
+    </div>

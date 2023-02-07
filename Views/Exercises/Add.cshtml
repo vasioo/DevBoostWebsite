@@ -1,26 +1,65 @@
 ﻿@model ExerciseFormModel
 
+<style>
+
+    .row{
+    font-size:27px;
+    }
+
+
+    .form-group{
+        padding-top:20px;
+    }
+
+    h1{
+        padding-bottom:25px;
+        text-align:center;
+    }
+
+    .text-center input{
+        background:purple;
+        border-color:purple;
+        height:50px;
+        width:150px;
+    } 
+    
+    .text-center input:hover{
+        background:red;
+            border-color: red;
+    }
+</style>
+
+
+<h1>Add a task</h1>
 <div class="row">
     <div class="col-sm-12 offset-lg-2 col-lg-8 offset-xl-3 col-xl-6">
         <form method="post">
             <div class="form-group">
-                <label asp-for="Title"></label>
-                <input asp-for="Title" class="form-control" placeholder="Title...">
-                <span asp-validation-for="Title" class="small text-danger"></span>
+                <label for="category">Choose a category:</label>
+                <select name="category" id="category">
+                      <option value="htmlcss">HTML & CSS</option>
+                      <option value="js">Javascript Beginning</option>
+                      <option value="csharpup">High Level C#</option>
+                      <option value="aspnet">ASP.NET</option>
+                      <option value="dsa">Data structures and Algorithms</option>
+                      <option value="advjs">Advanced Javascript</option>
+                      <option value="bootstrap">Bootstrap</option>
+                      <option value="react">ReactJS</option>
+                    </select>
             </div>
             <div class="form-group">
                 <label asp-for="Description"></label>
-                <textarea asp-for="Description" rows="4" class="form-control" placeholder="Two bedrooms..."></textarea>
+                <textarea asp-for="Description" rows="6" class="form-control" placeholder="What is the task..."></textarea>
                 <span asp-validation-for="Description" class="small text-danger"></span>
             </div>
             <div class="form-group">
                 <label asp-for="Input"></label>
-                <input asp-for="Input" class="form-control" placeholder="Input: ">
+                <input asp-for="Input" class="form-control" placeholder="What should the person enter: ">
                 <span asp-validation-for="Input" class="small text-danger"></span>
             </div>
            <div class="form-group">
                 <label asp-for="Output"></label>
-                <input asp-for="Output" class="form-control" placeholder="Output: ">
+                <input asp-for="Output" class="form-control" placeholder="What should the program return: ">
                 <span asp-validation-for="Output" class="small text-danger"></span>
             </div>
             <div class="text-center">
