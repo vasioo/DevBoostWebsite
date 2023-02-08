@@ -1,6 +1,20 @@
 ﻿@{
     ViewBag.Title = "Help";
 }
+
+<style>
+    #buttonOfdeath{
+        background: #2D033B;
+        border-color: blueviolet;
+    }
+
+        #buttonOfdeath:hover {
+            background: #b16cc8;
+            border-color: blueviolet;
+    }
+</style>
+
+
 <h2>Ask for Help </h2>
 <br />
 <br />
@@ -22,6 +36,6 @@
         <input class="form-control" type="text" name="subject" /> <br />
         <span class="form-control-static"> Message: </span>
         <input class="form-control" type="text" name="message" />
-        <br /> <input class="btn btn-primary" type="submit" value="Send" />
+        <br /> <input id="buttonOfdeath" class="btn btn-primary" type="submit" value="Send" />
     </div>
 </form>  
