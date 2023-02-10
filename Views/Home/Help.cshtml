@@ -25,17 +25,25 @@
 }
 
 
-<form method="post" action="Help">
-    <div class="container">
-        <span class="form-control-static"> Receiver: </span>
-        <input class="form-control" type="text" name="receiver" />
-        <br />
-        <span class="form-control-static">
-            Subject:
-        </span>
-        <input class="form-control" type="text" name="subject" /> <br />
-        <span class="form-control-static"> Message: </span>
-        <input class="form-control" type="text" name="message" />
-        <br /> <input id="buttonOfdeath" class="btn btn-primary" type="submit" value="Send" />
-    </div>
-</form>  
+<body>
+    <h2>Submit Email Request for Assistance</h2>
+    <form method="post" action="ProcessRequest.cshtml">
+        <div>
+            Your name:
+            <input type="text" name="customerName" />
+        </div>
+
+        <div>
+            Your email address:
+            <input type="text" name="customerEmail" />
+        </div>
+
+        <div>
+            Details about your problem: <br />
+            <textarea name="customerRequest" cols="45" rows="4"></textarea>
+        </div>
+
+        <div>
+            <input type="submit" value="Submit" />
+        </div>
+    </form>
