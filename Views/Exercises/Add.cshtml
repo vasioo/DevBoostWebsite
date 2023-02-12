@@ -1,4 +1,4 @@
-﻿@model ExerciseFormModel
+﻿@model TaskFormModel
 
 <style>
 
@@ -35,16 +35,16 @@
     <div class="col-sm-12 offset-lg-2 col-lg-8 offset-xl-3 col-xl-6">
         <form method="post">
             <div class="form-group">
-                <label for="category">Choose a category:</label>
-                <select name="category" id="category">
-                      <option value="htmlcss">HTML & CSS</option>
-                      <option value="js">Javascript Beginning</option>
-                      <option value="csharpup">High Level C#</option>
-                      <option value="aspnet">ASP.NET</option>
-                      <option value="dsa">Data structures and Algorithms</option>
-                      <option value="advjs">Advanced Javascript</option>
-                      <option value="bootstrap">Bootstrap</option>
-                      <option value="react">ReactJS</option>
+                <label asp-for="CategoryId">Choose a category:</label>
+                <select asp-for="CategoryId" name="category" id="category">
+                      <option value="1">HTML & CSS</option>
+                      <option value="2">Javascript Beginning</option>
+                      <option value="3">High Level C#</option>
+                      <option value="4">ASP.NET</option>
+                      <option value="5">Data structures and Algorithms</option>
+                      <option value="6">Advanced Javascript</option>
+                      <option value="7">Bootstrap</option>
+                      <option value="8">ReactJS</option>
                     </select>
             </div>
             <div class="form-group">
