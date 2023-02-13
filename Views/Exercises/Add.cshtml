@@ -1,4 +1,4 @@
-﻿@model TaskFormModel
+﻿@model AddModel
 
 <style>
 
@@ -35,6 +35,13 @@
     <div class="col-sm-12 offset-lg-2 col-lg-8 offset-xl-3 col-xl-6">
         <form method="post">
             <div class="form-group">
+                @Html.LabelFor(model => model.SelectedValue, htmlAttributes: new { @class = "control-label col-md-2" })
+                <div class="col-md-10">
+                    @Html.DropDownListFor(model => model.SelectedValue, Model.Values, "Please select a value", new { @class = "form-control" })
+                    @Html.ValidationMessageFor(model => model.SelectedValue, "", new { @class = "text-danger" })
+                </div>
+            </div>
+           @* <div class="form-group">
                 <label asp-for="CategoryId">Choose a category:</label>
                 <select asp-for="CategoryId" name="category" id="category">
                       <option value="1">HTML & CSS</option>
@@ -46,7 +53,7 @@
                       <option value="7">Bootstrap</option>
                       <option value="8">ReactJS</option>
                     </select>
-            </div>
+            </div>*@
             <div class="form-group">
                 <label asp-for="Description"></label>
                 <textarea asp-for="Description" rows="6" class="form-control" placeholder="What is the task..."></textarea>

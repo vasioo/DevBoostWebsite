@@ -29,20 +29,28 @@
     <form method="post" action="ProcessRequest.cshtml">
         <div>
             Your name:
-            <input type="text" name="customerName" />
+            <input type="text" name="name" />
         </div>
 
         <div>
             Your email address:
-            <input type="text" name="customerEmail" />
+            <input type="text" name="emailaddress" />
         </div>
 
         <div>
             Details about your problem: <br />
-            <textarea name="customerRequest" cols="45" rows="4"></textarea>
+            <textarea name="message" cols="45" rows="4"></textarea>
         </div>
 
         <div>
-            <input type="submit" value="Submit" />
+            <input type="submit" id="buttonOfdeath" value="Submit" />
         </div>
     </form>
+    
+ @*   @if(Model.isSend =="sent"){
+        <p style="color:green">This email has been sent</p>
+    }
+    @if (Model.isSend == "failed")
+    {
+        <p style="color:red">Something went wrong</p>
+    }*@
