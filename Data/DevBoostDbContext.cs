@@ -1,8 +1,27 @@
-﻿namespace DevBoost.Data
+﻿
+using Microsoft.AspNetCore.Identity;
+using Microsoft.AspNetCore.Identity.EntityFrameworkCore;
+using Microsoft.EntityFrameworkCore;
+
+namespace DevBoost.Data
 {
-    public class DevBoostDbContext
+    public class DevBoostDbContext: IdentityDbContext<User>
     {
 
-       //create the connection between the database and the main functions
+        private bool seedDb;
+        public DevBoostDbContext(DbContextOptions<DevBoostDbContext> options, bool seedDb = true)
+            : base(options)
+        {
+            if (this.Database.IsRelational())
+            {
+                this.Database.Migrate();
+            }
+            else
+            {
+                this.Database.EnsureCreated();
+            }
+
+            this.seedDb = seedDb;
+        }
     }
 }

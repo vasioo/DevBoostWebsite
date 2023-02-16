@@ -15,6 +15,17 @@
 
             public const int OutputMaxLength = 150;
             public const int OutputMinLength = 0;
+
+        }
+
+        public class User
+        {
+
+            public const int FirstNameMaxLength = 40;
+            public const int FirstNameMinLength = 5;
+
+            public const int LastNameMaxLength = 40;
+            public const int LastNameMinLength = 5;
         }
     }
 }
