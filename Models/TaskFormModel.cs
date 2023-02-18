@@ -1,23 +1,29 @@
 ﻿using DevBoost.Services;
 using System.ComponentModel.DataAnnotations;
 using static DevBoost.Data.DataConstants.Adding;
+using DevBoost.Models;
 
 namespace DevBoost.Models
 {
-    public class TaskFormModel
+    public class TaskFormModel:ITaskModel
     {
         //TODO: add a mapping profiler 
+
+        public int Id { get; set; }
 
         [Required]
         [StringLength(TitleMaxLength, MinimumLength = TitleMinLength)]
         public string? Title { get; set; }
 
         [Display(Name = "Category")]
-        public int CategoryId { get; set; }
+        public string? Category { get; set; }
+
+        [Required]
+        public string? Name { get; set; }
 
         [Required]
         [StringLength(DescriptionMaxLength, MinimumLength = DescriptionMinLength)]
-        public string? Description { get; set; }
+        public string? Task { get; set; }
 
         [Required]
         [StringLength(InputMaxLength, MinimumLength = InputMinLength)]

@@ -1,4 +1,4 @@
-﻿@model AddModel
+﻿@model TaskFormModel
 
 <style>
 
@@ -34,16 +34,16 @@
 <div class="row">
     <div class="col-sm-12 offset-lg-2 col-lg-8 offset-xl-3 col-xl-6">
         <form method="post">
+       
             <div class="form-group">
-                @Html.LabelFor(model => model.SelectedValue, htmlAttributes: new { @class = "control-label col-md-2" })
-                <div class="col-md-10">
-                    @Html.DropDownListFor(model => model.SelectedValue, Model.Values, "Please select a value", new { @class = "form-control" })
-                    @Html.ValidationMessageFor(model => model.SelectedValue, "", new { @class = "text-danger" })
-                </div>
+                <label asp-for="Title"></label>
+                <textarea asp-for="Title" rows="6" class="form-control" placeholder="Title..."></textarea>
+                <span asp-validation-for="Title" class="small text-danger"></span>
             </div>
-           @* <div class="form-group">
-                <label asp-for="CategoryId">Choose a category:</label>
-                <select asp-for="CategoryId" name="category" id="category">
+
+            <div class="form-group">
+                <label asp-for="Category">Choose a category:</label>
+                <select asp-for="Category" name="category" id="category">
                       <option value="1">HTML & CSS</option>
                       <option value="2">Javascript Beginning</option>
                       <option value="3">High Level C#</option>
@@ -53,11 +53,18 @@
                       <option value="7">Bootstrap</option>
                       <option value="8">ReactJS</option>
                     </select>
-            </div>*@
+            </div>
+           
+               <div class="form-group">
+                <label asp-for="Name"></label>
+                <textarea asp-for="Name" rows="6" class="form-control" placeholder="Name..."></textarea>
+                <span asp-validation-for="Name" class="small text-danger"></span>
+            </div>
+
             <div class="form-group">
-                <label asp-for="Description"></label>
-                <textarea asp-for="Description" rows="6" class="form-control" placeholder="What is the task..."></textarea>
-                <span asp-validation-for="Description" class="small text-danger"></span>
+                <label asp-for="Task"></label>
+                <textarea asp-for="Task" rows="6" class="form-control" placeholder="What is the task..."></textarea>
+                <span asp-validation-for="Task" class="small text-danger"></span>
             </div>
             <div class="form-group">
                 <label asp-for="Input"></label>
@@ -72,6 +79,7 @@
             <div class="text-center">
                 <input class="btn btn-primary mt-3" type="submit" value="Save" />
             </div>
+            @ViewBag.message
         </form>
     </div>
 </div>

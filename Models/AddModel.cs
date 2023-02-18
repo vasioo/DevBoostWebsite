@@ -5,6 +5,7 @@ namespace DevBoost.Models
     public class AddModel
     {
         public string Description { get; set; }
+        public int CategoryId { get; set; }
         public string Input { get; set; }
         public string Output { get; set; }
         public string SelectedValue { get; set; }
