@@ -6,12 +6,14 @@ namespace DevBoost.Controllers
 {
     public class ExercisesController : Controller
     {
+        private readonly Exercise _exercise;
         private readonly ILogger<ExercisesController> _logger;
 
-        public ExercisesController(ILogger<ExercisesController> logger, DevBoostDbContext dbc)
+        public ExercisesController(ILogger<ExercisesController> logger, DevBoostDbContext dbc,Exercise exercise)
         {
             _logger = logger;
             _dbc = dbc;
+            _exercise = exercise;
         }
 
         private readonly DevBoostDbContext _dbc;
@@ -80,5 +82,7 @@ namespace DevBoost.Controllers
             ViewBag.message = "The Record is saved successfully!";
             return View(tfm);
         }
+
+    
     }
 }

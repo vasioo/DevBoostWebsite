@@ -1,5 +1,4 @@
-﻿
-using DevBoost.Models;
+﻿using DevBoost.Models;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Identity.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore;
@@ -26,6 +25,8 @@ namespace DevBoost.Data
         }
 
 
-        public DbSet<TaskFormModel> ExerciseTable{ get; set; }
+       // public DbSet<TaskFormModel> ExerciseTable{ get; set; }
+
+        public DbSet<ExerciseFormModel> ExerciseTable{ get; set; }
     }
 }
