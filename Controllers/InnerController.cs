@@ -9,14 +9,6 @@ namespace DevBoost.Controllers
         {
             return View();
         }
-        public IActionResult All()
-        {
-            Exercise exercise = new Exercise();
-            List<Exercise> list = new List<Exercise>();
-
-            list = exercise.All();
-            ViewData["Exercise"] = list;
-            return View();
-        }
+      
     }
 }
