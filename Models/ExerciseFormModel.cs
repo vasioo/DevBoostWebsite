@@ -7,25 +7,25 @@ namespace DevBoost.Models
     {
         
         [Required]
-        public string Title { get; set; }
+        public string? Title { get; set; }
 
         [Required]
-        public string Category { get; set; }
+        public string? Category { get; set; }
 
         [Required]
-        public string Name { get; set; }
+        public string? Name { get; set; }
 
         [Required]
-        public string Task { get; set; }
+        public string? Task { get; set; }
 
         [Required]
-        public string Description { get; set; }
+        public string? Description { get; set; }
 
         [Required]
-        public string Input { get; set; }
+        public string? Input { get; set; }
 
         [Required]
-        public string Output { get; set; }
+        public string? Output { get; set; }
 
     }
 }

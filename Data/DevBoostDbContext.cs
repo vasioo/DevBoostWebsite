@@ -25,6 +25,7 @@ namespace DevBoost.Data
             this.seedDb = seedDb;
         }
 
+
         public DbSet<TaskFormModel> ExerciseTable{ get; set; }
     }
 }
