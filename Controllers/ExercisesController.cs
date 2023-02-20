@@ -9,7 +9,7 @@ namespace DevBoost.Controllers
         private readonly Exercise _exercise;
         private readonly ILogger<ExercisesController> _logger;
 
-        public ExercisesController(ILogger<ExercisesController> logger, DevBoostDbContext dbc,Exercise exercise)
+        public ExercisesController(ILogger<ExercisesController> logger, DevBoostDbContext dbc, Exercise exercise)
         {
             _logger = logger;
             _dbc = dbc;
@@ -83,14 +83,6 @@ namespace DevBoost.Controllers
             return View(tfm);
         }
 
-        public IActionResult All()
-        {
-            Exercise exercise = new Exercise();
-            List<Exercise> list = new List<Exercise>();
 
-            list = exercise.All();
-            ViewData["Exercise"] = list;
-            return View();
-        }
     }
 }

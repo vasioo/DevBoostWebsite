@@ -5,7 +5,7 @@ using Microsoft.EntityFrameworkCore;
 
 namespace DevBoost.Data
 {
-    public class DevBoostDbContext: IdentityDbContext<User>
+    public class DevBoostDbContext: DbContext
     {
 
         private bool seedDb;
@@ -24,9 +24,17 @@ namespace DevBoost.Data
             this.seedDb = seedDb;
         }
 
+        public DevBoostDbContext()
+        {
 
+        }
        // public DbSet<TaskFormModel> ExerciseTable{ get; set; }
 
-        public DbSet<ExerciseFormModel> ExerciseTable{ get; set; }
+        public DbSet<Exercise> ExerciseTable{ get; set; }
+
+        protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
+        {
+            optionsBuilder.UseSqlServer("Server=.;Database=DevBoost;Trusted_Connection=True;");
+        }
     }
 }

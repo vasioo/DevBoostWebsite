@@ -1,5 +1,6 @@
 ﻿using DevBoost.Data;
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.EntityFrameworkCore;
 
 namespace DevBoost.Controllers
 {
@@ -7,8 +8,11 @@ namespace DevBoost.Controllers
     {
         public IActionResult Index()
         {
-            return View();
+            using (var db = new DevBoostDbContext())
+            {
+                var menuItems = db.ExerciseTable.ToList();
+                return View(menuItems);
+            }
         }
-      
     }
 }

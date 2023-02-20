@@ -3,6 +3,9 @@ using Microsoft.AspNetCore.Identity;
 using Microsoft.EntityFrameworkCore;
 using Stripe;
 using System.Configuration;
+using Microsoft.EntityFrameworkCore.SqlServer;
+using DevBoost.Controllers;
+using DevBoost.Models;
 
 namespace DevBoost
 {
@@ -25,6 +28,7 @@ namespace DevBoost
             builder.Services.AddDefaultIdentity<IdentityUser>(options => options.SignIn.RequireConfirmedAccount = true)
                 .AddEntityFrameworkStores<DevBoostDbContext>();
             builder.Services.AddControllersWithViews();
+
 
             var app = builder.Build();
 
@@ -56,5 +60,7 @@ namespace DevBoost
 
             app.Run();
         }
+
+     
     }
 }
