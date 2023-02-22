@@ -5,7 +5,7 @@ using DevBoost.Models;
 
 namespace DevBoost.Models
 {
-    public class TaskFormModel:ITaskModel
+    public class TaskFormModel:IExercise
     {
         //TODO: add a mapping profiler 
 

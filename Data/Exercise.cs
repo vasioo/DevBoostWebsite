@@ -8,7 +8,7 @@ using static DevBoost.Data.DataConstants.ExerciseConstraints;
 
 namespace DevBoost.Data
 {
-    public class Exercise
+    public class Exercise:IExercise
     {
 
         [Key]

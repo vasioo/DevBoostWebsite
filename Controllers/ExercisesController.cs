@@ -6,14 +6,12 @@ namespace DevBoost.Controllers
 {
     public class ExercisesController : Controller
     {
-        private readonly Exercise _exercise;
         private readonly ILogger<ExercisesController> _logger;
 
-        public ExercisesController(ILogger<ExercisesController> logger, DevBoostDbContext dbc, Exercise exercise)
+        public ExercisesController(ILogger<ExercisesController> logger, DevBoostDbContext dbc)
         {
             _logger = logger;
             _dbc = dbc;
-            _exercise = exercise;
         }
 
         private readonly DevBoostDbContext _dbc;
@@ -25,7 +23,11 @@ namespace DevBoost.Controllers
 
         public IActionResult HTMLCSS()
         {
-            return View();
+            using (var db = new DevBoostDbContext())
+            {
+                var menuItems = db.ExerciseTable.ToList();
+                return View(menuItems);
+            }
         }
 
         public IActionResult CSharpBeginning()
@@ -75,14 +77,12 @@ namespace DevBoost.Controllers
 
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public IActionResult Add(TaskFormModel tfm)
+        public IActionResult Add(Exercise tfm)
         {
             _dbc.Add(tfm);
             _dbc.SaveChanges();
             ViewBag.message = "The Record is saved successfully!";
             return View(tfm);
         }
-
-
     }
 }

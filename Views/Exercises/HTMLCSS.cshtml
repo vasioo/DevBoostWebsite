@@ -10,10 +10,13 @@
 <div class="col-md-4">
     <div class="card mb-3">
         <ul>
-       @foreach (var item in Model)
-        {
-            <li>@item.Title</li>
-        }
+            @foreach (var item in Model)
+            {
+                @if (@item.Category == "1")
+                {
+                    <li>@item.Title</li>
+                }
+            }
         </ul>
     </div>
 </div>

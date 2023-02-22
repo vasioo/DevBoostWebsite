@@ -28,7 +28,7 @@ namespace DevBoost.Data
         {
 
         }
-       // public DbSet<TaskFormModel> ExerciseTable{ get; set; }
+
 
         public DbSet<Exercise> ExerciseTable{ get; set; }
 
