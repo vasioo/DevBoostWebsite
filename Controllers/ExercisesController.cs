@@ -32,42 +32,42 @@ namespace DevBoost.Controllers
 
         public IActionResult CSharpBeginning()
         {
-            return View();
+            return HTMLCSS();
         }
 
         public IActionResult JavascriptBeginning()
         {
-            return View();
+            return HTMLCSS();
         }
 
         public IActionResult CSharpHigh()
         {
-            return View();
+            return HTMLCSS();
         }
 
         public IActionResult ASP()
         {
-            return View();
+            return HTMLCSS();
         }
 
         public IActionResult DSA()
         {
-            return View();
+            return HTMLCSS();
         }
 
         public IActionResult JavascriptHigh()
         {
-            return View();
+            return HTMLCSS();
         }
 
         public IActionResult Bootstrap()
         {
-            return View();
+            return HTMLCSS();
         }
 
         public IActionResult ReactJS()
         {
-            return View();
+            return HTMLCSS();
         }
 
         public IActionResult Add()
@@ -84,5 +84,8 @@ namespace DevBoost.Controllers
             ViewBag.message = "The Record is saved successfully!";
             return View(tfm);
         }
+
+
+
     }
 }

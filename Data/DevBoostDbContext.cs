@@ -29,7 +29,6 @@ namespace DevBoost.Data
 
         }
 
-
         public DbSet<Exercise> ExerciseTable{ get; set; }
 
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)

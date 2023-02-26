@@ -5,9 +5,9 @@ VisualStudioVersion = 17.4.33110.190
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "DevBoost", "DevBoost.csproj", "{9F4E75E3-D106-4DE7-8D13-47B1823D604F}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DevBoost.Tests", "..\DevBoost.Tests\DevBoost.Tests.csproj", "{AD2E1D59-C377-4095-B87E-FE1A196BA631}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "DevBoost.Tests", "..\DevBoost.Tests\DevBoost.Tests.csproj", "{AD2E1D59-C377-4095-B87E-FE1A196BA631}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DevBoostServices", "..\DevBoostServices\DevBoostServices.csproj", "{177C0325-F6F8-4457-A6FA-E75114B9EC4B}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "DevBoostServices", "..\DevBoostServices\DevBoostServices.csproj", "{177C0325-F6F8-4457-A6FA-E75114B9EC4B}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

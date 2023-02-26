@@ -1,9 +1,14 @@
-﻿@{
+﻿
+@    using DevBoost.Models.EnteringModels;
+@model RegisterModel
+
+@{
     ViewData["Title"] = "Entering";
 }
 <style>
 
     * {
+        color: black;
         margin: 0;
         padding: 0;
         font-family: 'Poppins',sans-serif;
@@ -17,7 +22,7 @@
         background-size: cover;
         position: relative;
         background: rgb(48,23,64);
-background: radial-gradient(circle, rgba(48,23,64,1) 23%, rgba(0,0,0,1) 53%);
+        background: radial-gradient(circle, rgba(48,23,64,1) 23%, rgba(0,0,0,1) 53%);
     }
 
     .form-box {
@@ -35,7 +40,7 @@ background: radial-gradient(circle, rgba(48,23,64,1) 23%, rgba(0,0,0,1) 53%);
         .form-box h1 {
             font: 30px;
             margin-bottom: 60px;
-            color: #3c00a0;
+            color: #9f98c8;
             position: relative;
         }
 
@@ -44,7 +49,7 @@ background: radial-gradient(circle, rgba(48,23,64,1) 23%, rgba(0,0,0,1) 53%);
                 width: 30px;
                 height: 4px;
                 border-radius: 3px;
-                background: #3c00a0;
+                background: #9f98c8;
                 position: absolute;
                 bottom: -12px;
                 left: 50%;
@@ -80,15 +85,16 @@ background: radial-gradient(circle, rgba(48,23,64,1) 23%, rgba(0,0,0,1) 53%);
     #forgot {
         text-align: left;
         font-size: 15px;
+        color: #9f98c8;
     }
 
         #forgot a {
             text-decoration: none;
-            color: #2D033B;
+            color: #9f98c8;
         }
 
         #forgot:hover {
-            color: blue;
+            color: lightskyblue;
         }
 
     .btn-field {
@@ -97,20 +103,34 @@ background: radial-gradient(circle, rgba(48,23,64,1) 23%, rgba(0,0,0,1) 53%);
         justify-content: space-between;
     }
 
-        .btn-field button {
-            flex-basis: 48%;
-            background: #2D033B;
-            color: #fff;
-            height: 40px;
-            border-radius: 20px;
-            border: 0;
-            outline: 0;
-            cursor: pointer;
-            transition: background 1s;
+    #submit {
+        padding-top: 23px;
+        justify-content: center;
+    }
+
+        #submit button {
+            background: #27ae60;
         }
+
+            #submit button:hover {
+                background: #008631;
+            }
+
+    .btn-field button {
+        flex-basis: 48%;
+        background: #2D033B;
+        color: #fff;
+        height: 40px;
+        border-radius: 20px;
+        border: 0;
+        outline: 0;
+        cursor: pointer;
+        transition: background 1s;
+    }
 
     .new_input-group {
         height: 280px;
+
     }
 
 
@@ -125,22 +145,29 @@ background: radial-gradient(circle, rgba(48,23,64,1) 23%, rgba(0,0,0,1) 53%);
     <script src="https://kit.fontawesome.com/11e757be1e.js" crossorigin="anonymous"></script>
     <div class="form-box">
         <h1 id="title">Register</h1>
-        <form>
-            <div class="new_input-group ">
-
+            <form class="myInput" asp-route-returnUrl="@Model.ReturnUrl" method="post">
+            <div class="new_input-group">
+                <div asp-validation-summary="ModelOnly" class="text-danger"></div>
                 <div class="input-field" id="nameField">
                     <i class="fa-solid fa-user"></i>
-                    <input type="text" placeholder="Name" class="myInput">
+                    <input asp-for="Input.Name" class="myInput" placeholder="Full Name" />
+                    <span asp-validation-for="Input.Name" class="text-danger"></span>
                 </div>
 
                 <div class="input-field">
                     <i class="fa-solid fa-envelope"></i>
-                    <input type="email" placeholder="Email" class="myInput">
+                    <input asp-for="Input.Email" class="myInput" autocomplete="username" aria-required="true" placeholder="Email" />
+                    
+                    <span asp-validation-for="Input.Email" class="text-danger"></span>
+
                 </div>
 
                 <div class="input-field">
                     <i class="fa-solid fa-lock"></i>
-                    <input type="password" placeholder="Password" class="myInput">
+                    <input asp-for="Input.Password" class="myInput" autocomplete="new-password" aria-required="true" placeholder="Password" />
+                    
+                    <span asp-validation-for="Input.Password" class="text-danger"></span>
+                   
                 </div>
 
                 <a id="forgot" onclick="location.href='@Url.Action("Help","Home")'">Forgot password</a>
@@ -149,8 +176,12 @@ background: radial-gradient(circle, rgba(48,23,64,1) 23%, rgba(0,0,0,1) 53%);
             <div class="btn-field">
                 <button type="button" id="registerBtn">Register</button>
                 <button type="button" class="disable" id="loginBtn">Log in</button>
-            </div>
 
+            </div>
+            <div class="btn-field" id="submit">
+                <hr />
+                <button type="submit" id="submitBtn">Submit</button>
+            </div>
         </form>
 
     </div>
@@ -163,6 +194,7 @@ background: radial-gradient(circle, rgba(48,23,64,1) 23%, rgba(0,0,0,1) 53%);
     let loginBtn = document.getElementById("loginBtn");
     let nameField = document.getElementById("nameField");
     let title = document.getElementById("title");
+    let submit = document.getElementById("submitBtn");
 
     loginBtn.onclick = function () {
         nameField.style.maxHeight = "0";
@@ -176,5 +208,9 @@ background: radial-gradient(circle, rgba(48,23,64,1) 23%, rgba(0,0,0,1) 53%);
         title.innerHTML = "Register";
         registerBtn.classList.remove("disable");
         loginBtn.classList.add("disable");
+    }
+
+    submit.onclick = function(){
+        window.location.href = "https://localhost:7103/Index"
     }
 </script>

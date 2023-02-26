@@ -21,6 +21,7 @@
         public class User
         {
 
+
             public const int FirstNameMaxLength = 40;
             public const int FirstNameMinLength = 5;
 

@@ -1,10 +1,23 @@
-﻿<div class="col-md-4">
-    <div class="card mb-3">
-        <h1>@Model.Title</h1><br />
+﻿@using DevBoost.Data;
+@model List<Exercise>
 
-        <h3>@Model.Name</h3><br />
-        <h3>@Model.Task</h3><br />
-        <h3>@Model.Input</h3><br />
-        <h3>@Model.Output</h3><br />
+@{
+    ViewData["Title"] = "InnerController";
+}
+<h2 class="text-center">@ViewBag.Title</h2>
+<hr />
+
+<div class="col-md-4">
+    <div class="card mb-3">
+        <ul>
+            @foreach (var item in Model)
+            {
+                @if (@item.Category == "1")
+                {
+                            <li>@item.Title</li>
+                }
+            }
+        </ul>
     </div>
 </div>
+
