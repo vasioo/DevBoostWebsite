@@ -1,22 +1,22 @@
 ﻿@using DevBoost.Data;
-@model List<Exercise>
+@model IEnumerable<Exercise>
 
 @{
     ViewData["Title"] = "InnerController";
 }
-<h2 class="text-center">@ViewBag.Title</h2>
+
+
+<h2 class="text-center">HTML & CSS Exercises Page</h2>
 <hr />
 
-<div class="col-md-4">
-    <div class="card mb-3">
-        <ul>
-            @foreach (var item in Model)
-            {
-                @if (@item.Category == "1")
-                {
-                    <li>@item.Title</li>
-                }
-            }
-        </ul>
-    </div>
-</div>
+
+<ul>
+    @foreach (var item in Model)
+    {
+        @if (@item.Category == "1")
+        {
+            <partial name="_ExercisePartial" model="@item" />
+            <br />
+        }
+    }
+</ul>

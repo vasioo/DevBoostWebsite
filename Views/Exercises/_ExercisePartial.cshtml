@@ -1,0 +1,26 @@
+﻿@using DevBoost.Data;
+@model Exercise
+
+<style>
+    * {
+        background: black;
+        color: white;
+    }
+
+</style>
+
+<div class="row row-cols-1 row-cols-md-2">
+    <div class="col mb-4">
+        <div class="card" style="width: 18rem;">
+            <div class="card-body">
+                <h5 class="card-title">@Model.Title</h5>
+                <p class="card-text">@Model.Task</p>
+            </div>
+            <ul class="list-group list-group-flush">
+                <li class="list-group-item">Creator's Name: @Model.Name</li>
+                <li class="list-group-item">Required Input: @Model.Input</li>
+                <li class="list-group-item">Required Output: @Model.Output</li>
+            </ul>
+        </div>
+    </div>
+</div>

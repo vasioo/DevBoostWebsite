@@ -35,5 +35,10 @@ namespace DevBoost.Data
         {
             optionsBuilder.UseSqlServer("Server=.;Database=DevBoost;Trusted_Connection=True;");
         }
+
+        protected override void OnModelCreating(ModelBuilder builder)
+        {
+
+        }
     }
 }
