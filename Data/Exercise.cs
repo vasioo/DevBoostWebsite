@@ -1,4 +1,4 @@
-﻿using DevBoost.Models;
+﻿using DevBoost.Models.ExerciseModels;
 using Microsoft.Data.SqlClient;
 using Microsoft.EntityFrameworkCore;
 using Stripe;

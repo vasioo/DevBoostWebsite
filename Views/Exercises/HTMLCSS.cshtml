@@ -5,18 +5,42 @@
     ViewData["Title"] = "InnerController";
 }
 
+<style>
+    .gradient-text h2 {
+        background: linear-gradient(45deg, #2FEBDC, #EB413B, #FFA300, #E422EB);
+        background-size: 400%;
+        animation: text-gradient 15s ease infinite;
+        padding: 5px 0;
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+        background-clip: text;
+        text-fill-color: transparent;
+    }
 
-<h2 class="text-center">HTML & CSS Exercises Page</h2>
-<hr />
+    @@keyframes text-gradient {
+        0% {
+            background-position: 0% 50%;
+        }
 
+        50% {
+            background-position: 100% 50%;
+        }
 
-<ul>
+        100% {
+            background-position: 0% 50%;
+        }
+    }
+</style>
+<div class="gradient-text">
+    <h2 class="text-center">HTML & CSS Exercises Page</h2>
+    <hr />
+</div>
+<div class="row">
     @foreach (var item in Model)
     {
         @if (@item.Category == "1")
         {
             <partial name="_ExercisePartial" model="@item" />
-            <br />
         }
     }
-</ul>
+</div>

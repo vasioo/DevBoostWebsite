@@ -17,38 +17,38 @@ namespace DevBoost.Controllers
 
         public IActionResult Index()
         {
-            return View();
+            return View("~/Views/Home/Navigation/Index.cshtml");
         }
 
         public IActionResult Privacy()
         {
-            return View();
+            return View("~/Views/Home/Navigation/Privacy.cshtml");
         }
 
         public IActionResult Exercises()
         {
-            return View();
+            return View("~/Views/Home/Navigation/Exercises.cshtml");
         }
 
         public IActionResult Community()
         {
-            return View();
+            return View("~/Views/Home/Navigation/Community.cshtml");
         }
 
         public IActionResult Pricing()
         {
-            return View();
+            return View("~/Views/Home/Navigation/Pricing.cshtml");
         }
 
         [HttpGet]
         public IActionResult Help()
         {
-            return View();
+            return View("~/Views/Home/Navigation/Help.cshtml");
         }
 
         public IActionResult Entering()
         {
-            return View();
+            return View("~/Views/Home/Navigation/Entering.cshtml");
         }
 
         [ResponseCache(Duration = 0, Location = ResponseCacheLocation.None, NoStore = true)]

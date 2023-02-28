@@ -31,7 +31,6 @@
 
   <ItemGroup>
     <Folder Include="Areas\Admin\" />
-    <Folder Include="Areas\Identity\Pages\Account\" />
   </ItemGroup>
 
 </Project>

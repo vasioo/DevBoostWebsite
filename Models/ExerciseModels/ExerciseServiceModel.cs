@@ -1,6 +1,8 @@
-﻿namespace DevBoost.Models
+﻿using System.ComponentModel;
+
+namespace DevBoost.Models.ExerciseModels
 {
-    public interface IExercise
+    public class ExerciseServiceModel
     {
         public int Id { get; set; }
         public string Title { get; set; }

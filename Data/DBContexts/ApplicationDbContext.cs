@@ -1,7 +1,7 @@
 ﻿using Microsoft.AspNetCore.Identity.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore;
 
-namespace DevBoost.Data
+namespace DevBoost.Data.DBContexts
 {
     public class ApplicationDbContext : IdentityDbContext
     {

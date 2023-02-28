@@ -1,4 +1,5 @@
 ﻿using DevBoost.Data;
+using DevBoost.Data.DBContexts;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 
@@ -11,7 +12,7 @@ namespace DevBoost.Controllers
             using (var db = new DevBoostDbContext())
             {
                 var menuItems = db.ExerciseTable.ToList();
-                return View(menuItems);
+                return View($"~/Views/Exercises/Topics/{menuItems}");
             }
         }
     }

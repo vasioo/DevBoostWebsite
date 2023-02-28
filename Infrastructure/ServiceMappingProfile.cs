@@ -1,6 +1,6 @@
 ﻿using AutoMapper;
 using DevBoost.Data;
-using DevBoost.Models;
+using DevBoost.Models.ExerciseModels;
 
 namespace DevBoost.Infrastructure
 {

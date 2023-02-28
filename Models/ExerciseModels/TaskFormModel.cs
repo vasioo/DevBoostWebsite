@@ -1,11 +1,10 @@
 ﻿using DevBoost.Services;
 using System.ComponentModel.DataAnnotations;
 using static DevBoost.Data.DataConstants.Adding;
-using DevBoost.Models;
 
-namespace DevBoost.Models
+namespace DevBoost.Models.ExerciseModels
 {
-    public class TaskFormModel:IExercise
+    public class TaskFormModel : IExercise
     {
         //TODO: add a mapping profiler 
 

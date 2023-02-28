@@ -1,4 +1,3 @@
-using DevBoost.Data;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.EntityFrameworkCore;
 using Stripe;
@@ -6,6 +5,8 @@ using System.Configuration;
 using Microsoft.EntityFrameworkCore.SqlServer;
 using DevBoost.Controllers;
 using DevBoost.Models;
+using DevBoost.Data.DBContexts;
+using Microsoft.AspNetCore.Mvc.Razor;
 
 namespace DevBoost
 {
@@ -61,6 +62,6 @@ namespace DevBoost
             app.Run();
         }
 
-     
+
     }
 }

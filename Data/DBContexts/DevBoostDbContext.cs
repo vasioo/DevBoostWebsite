@@ -3,22 +3,22 @@ using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Identity.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore;
 
-namespace DevBoost.Data
+namespace DevBoost.Data.DBContexts
 {
-    public class DevBoostDbContext: DbContext
+    public class DevBoostDbContext : DbContext
     {
 
         private bool seedDb;
         public DevBoostDbContext(DbContextOptions<DevBoostDbContext> options, bool seedDb = true)
             : base(options)
         {
-            if (this.Database.IsRelational())
+            if (Database.IsRelational())
             {
-                this.Database.Migrate();
+                Database.Migrate();
             }
             else
             {
-                this.Database.EnsureCreated();
+                Database.EnsureCreated();
             }
 
             this.seedDb = seedDb;
@@ -29,7 +29,7 @@ namespace DevBoost.Data
 
         }
 
-        public DbSet<Exercise> ExerciseTable{ get; set; }
+        public DbSet<Exercise> ExerciseTable { get; set; }
 
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
         {

@@ -2,25 +2,38 @@
 @model Exercise
 
 <style>
-    * {
-        background: black;
-        color: white;
+    .main h2{
+        color: #9F2B68;
     }
 
+    #task{
+        background:white;
+        color:black;
+    }
+
+    #task1{
+        background:white;
+        color:black;
+        font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    }
 </style>
 
-<div class="row row-cols-1 row-cols-md-2">
-    <div class="col mb-4">
-        <div class="card" style="width: 18rem;">
-            <div class="card-body">
-                <h5 class="card-title">@Model.Title</h5>
-                <p class="card-text">@Model.Task</p>
+<div class="col-md-4">
+    <div class="card mb-3">
+        <div class="card-body text-center">
+            <div class="main">
+                <div class="card-body">
+                    <h2 class="card-title">@Model.Title</h2>
+                    <p class="card-text">@Model.Task</p>
+                </div>
             </div>
-            <ul class="list-group list-group-flush">
-                <li class="list-group-item">Creator's Name: @Model.Name</li>
-                <li class="list-group-item">Required Input: @Model.Input</li>
-                <li class="list-group-item">Required Output: @Model.Output</li>
-            </ul>
+            <div class="mainItems">
+                <ul class="list-group list-group-flush" >
+                    <li class="list-group-item"><h5 id="task1"><em id="task">Creator's Name:</em> @Model.Name</h3></li>
+                    <li class="list-group-item"><h5 id="task1"><em id="task">Required Input:</em> @Model.Input</h3></li>
+                    <li class="list-group-item"><h5 id="task1"><em id="task">Required Output:</em> @Model.Output</h3></li>
+                </ul>
+            </div>
         </div>
     </div>
 </div>

@@ -1,22 +1,46 @@
 ﻿@using DevBoost.Data;
-@model List<Exercise>
+@model IEnumerable<Exercise>
 
 @{
     ViewData["Title"] = "InnerController";
 }
-<h2 class="text-center">C# Advanced Exercises Page</h2>
-<hr />
 
-<div class="col-md-4">
-    <div class="card mb-3">
-        <ul>
-            @foreach (var item in Model)
-            {
-                @if (@item.Category == "3")
-                {
-                            <li>@item.Title</li>
-                }
-            }
-        </ul>
-    </div>
+<style>
+    .gradient-text h2 {
+        background: linear-gradient(45deg, #2FEBDC, #EB413B, #FFA300, #E422EB);
+        background-size: 400%;
+        animation: text-gradient 15s ease infinite;
+        padding: 5px 0;
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+        background-clip: text;
+        text-fill-color: transparent;
+    }
+
+    @@keyframes text-gradient {
+        0% {
+            background-position: 0% 50%;
+        }
+
+        50% {
+            background-position: 100% 50%;
+        }
+
+        100% {
+            background-position: 0% 50%;
+        }
+    }
+</style>
+<div class="gradient-text">
+    <h2 class="text-center">Advanced C# Exercise Page</h2>
+    <hr />
+</div>
+<div class="row">
+    @foreach (var item in Model)
+    {
+        @if (@item.Category == "3")
+        {
+            <partial name="_ExercisePartial" model="@item" />
+        }
+    }
 </div>

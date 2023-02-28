@@ -1,9 +1,9 @@
 ﻿
 using System.ComponentModel.DataAnnotations;
 
-namespace DevBoost.Models
+namespace DevBoost.Models.ExerciseModels
 {
-    public class ExerciseFormModel:ITaskModel
+    public class ExerciseFormModel : ITaskModel
     {
         [Key]
         public int Id { get; set; }

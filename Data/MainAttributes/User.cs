@@ -2,9 +2,9 @@
 using System.ComponentModel.DataAnnotations;
 using static DevBoost.Data.DataConstants.User;
 
-namespace DevBoost.Data
+namespace DevBoost.Data.MainAttributes
 {
-    public class User:IdentityUser
+    public class User : IdentityUser
     {
         [Required]
         [MaxLength(FirstNameMaxLength)]
