@@ -83,6 +83,7 @@ namespace DevBoost.Controllers
             _dbc.Add(tfm);
             _dbc.SaveChanges();
             ViewBag.message = "The Record is saved successfully!";
+            Thread.Sleep(1000);
             return View("~/Views/Home/Navigation/Exercises.cshtml");
         }
     }

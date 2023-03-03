@@ -3,31 +3,31 @@
 
 <style>
 
-    .row{
-    font-size:27px;
+    .row {
+        font-size: 27px;
     }
 
 
-    .form-group{
-        padding-top:20px;
+    .form-group {
+        padding-top: 20px;
     }
 
-    h1{
-        padding-bottom:25px;
-        text-align:center;
+    h1 {
+        padding-bottom: 25px;
+        text-align: center;
     }
 
-    .text-center input{
+    .text-center input {
         background: #2D033B;
         border-color: blueviolet;
-        height:50px;
-        width:150px;
-    } 
-    
-    .text-center input:hover{
-            background: #b16cc8;
-                border-color: blueviolet;
+        height: 50px;
+        width: 150px;
     }
+
+        .text-center input:hover {
+            background: #b16cc8;
+            border-color: blueviolet;
+        }
 </style>
 
 
@@ -35,7 +35,7 @@
 <div class="row">
     <div class="col-sm-12 offset-lg-2 col-lg-8 offset-xl-3 col-xl-6">
         <form method="post">
-       
+
             <div class="form-group">
                 <label asp-for="Title"></label>
                 <input asp-for="Title" class="form-control" placeholder="Title..."></input>
@@ -45,18 +45,18 @@
             <div class="form-group">
                 <label asp-for="Category">Choose a category:</label>
                 <select asp-for="Category" name="category" id="category">
-                      <option value="1">HTML & CSS</option>
-                      <option value="2">Javascript Beginning</option>
-                      <option value="3">High Level C#</option>
-                      <option value="4">ASP.NET</option>
-                      <option value="5">Data structures and Algorithms</option>
-                      <option value="6">Advanced Javascript</option>
-                      <option value="7">Bootstrap</option>
-                      <option value="8">ReactJS</option>
-                    </select>
+                    <option value="1">HTML & CSS</option>
+                    <option value="2">Javascript Beginning</option>
+                    <option value="3">High Level C#</option>
+                    <option value="4">ASP.NET</option>
+                    <option value="5">Data structures and Algorithms</option>
+                    <option value="6">Advanced Javascript</option>
+                    <option value="7">Bootstrap</option>
+                    <option value="8">ReactJS</option>
+                </select>
             </div>
-           
-               <div class="form-group">
+
+            <div class="form-group">
                 <label asp-for="Name"></label>
                 <input asp-for="Name" class="form-control" placeholder="Name..."></input>
                 <span asp-validation-for="Name" class="small text-danger"></span>
@@ -72,13 +72,13 @@
                 <input asp-for="Input" class="form-control" placeholder="What should the person enter: ">
                 <span asp-validation-for="Input" class="small text-danger"></span>
             </div>
-           <div class="form-group">
+            <div class="form-group">
                 <label asp-for="Output"></label>
                 <input asp-for="Output" class="form-control" placeholder="What should the program return: ">
                 <span asp-validation-for="Output" class="small text-danger"></span>
             </div>
             <div class="text-center">
-                <input class="btn btn-primary mt-3" type="submit" value="Save" />
+                <input id="confirmationButton" class="btn btn-primary mt-3" type="submit" value="Save" />
             </div>
             @ViewBag.message
         </form>
