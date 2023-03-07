@@ -18,6 +18,7 @@ using Microsoft.AspNetCore.Identity.UI.Services;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.RazorPages;
 using Microsoft.AspNetCore.WebUtilities;
+using Microsoft.Extensions.Caching.Memory;
 using Microsoft.Extensions.Logging;
 using static DevBoost.Data.DataConstants.User;
 
@@ -26,17 +27,18 @@ namespace DevBoost.Areas.Identity.Pages.Account
     [AllowAnonymous]
     public class RegisterModel : PageModel
     {
-        private readonly SignInManager<IdentityUser> _signInManager;
-        private readonly UserManager<IdentityUser> _userManager;
+        private readonly SignInManager<User> _signInManager;
+        private readonly UserManager<User> _userManager;
+        private readonly IMemoryCache cache;
 
         public RegisterModel(
-            UserManager<IdentityUser> userManager,
-
-            SignInManager<IdentityUser> signInManager
+            UserManager<User> userManager,
+            SignInManager<User> signInManager, IMemoryCache cache
            )
         {
             _userManager = userManager;
             _signInManager = signInManager;
+            this.cache = cache;
         }
 
 

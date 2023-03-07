@@ -7,6 +7,8 @@ using DevBoost.Controllers;
 using DevBoost.Models;
 using DevBoost.Data.DBContexts;
 using Microsoft.AspNetCore.Mvc.Razor;
+using DevBoost.Data.MainAttributes;
+using Microsoft.AspNetCore.Mvc;
 
 namespace DevBoost
 {
@@ -16,33 +18,58 @@ namespace DevBoost
         {
             var builder = WebApplication.CreateBuilder(args);
 
-            // Add services to the container.
             var connectionString = builder
                 .Configuration
                 .GetConnectionString("DefaultConnection")
-                ?? throw new InvalidOperationException("Connection string 'DefaultConnection' not found.");
+                ?? throw new InvalidOperationException
+                ("Connection string 'DefaultConnection' not found.");
 
             builder.Services.AddDbContext<DevBoostDbContext>(options =>
                 options.UseSqlServer(connectionString));
+
             builder.Services.AddDatabaseDeveloperPageExceptionFilter();
 
-            builder.Services.AddDefaultIdentity<IdentityUser>(options => options.SignIn.RequireConfirmedAccount = true)
-                .AddEntityFrameworkStores<DevBoostDbContext>();
-            builder.Services.AddControllersWithViews();
+            builder.Services.AddDefaultIdentity<User>(
+                options =>
+                {
+                    options.SignIn.RequireConfirmedAccount = false;
+                    options.Password.RequireDigit = false;
+                    options.Password.RequireLowercase = false;
+                    options.Password.RequireNonAlphanumeric = false;
+                    options.Password.RequireUppercase = false;
+                })
+                   .AddEntityFrameworkStores<DevBoostDbContext>();
 
+            //builder.Services.AddDefaultIdentity<User>
+            //    (options =>
+            //    {
+            //        options.SignIn.RequireConfirmedAccount = false;
+            //        options.Password.RequireDigit = false;
+            //        options.Password.RequireLowercase = false;
+            //        options.Password.RequireNonAlphanumeric = false;
+            //        options.Password.RequireUppercase = false;
+            //    })
+            //    .AddRoles<IdentityRole>()
+            //    .AddEntityFrameworkStores<DevBoostDbContext>();
+
+            builder.Services.AddControllersWithViews(options =>
+            {
+                options.Filters.Add<AutoValidateAntiforgeryTokenAttribute>();
+            });
+
+            //builder.Services.AddMemoryCache();
 
             var app = builder.Build();
 
-            // Configure the HTTP request pipeline.
-
             if (app.Environment.IsDevelopment())
             {
+                app.UseDeveloperExceptionPage();
                 app.UseMigrationsEndPoint();
             }
             else
             {
                 app.UseExceptionHandler("/Home/Error");
-                // The default HSTS value is 30 days. You may want to change this for production scenarios, see https://aka.ms/aspnetcore-hsts.
+                app.UseStatusCodePagesWithRedirects("/Errors/Error?statusCode={0}");
                 app.UseHsts();
             }
 
@@ -61,7 +88,5 @@ namespace DevBoost
 
             app.Run();
         }
-
-
     }
 }
