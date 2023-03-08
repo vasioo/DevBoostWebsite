@@ -38,19 +38,8 @@ namespace DevBoost
                     options.Password.RequireNonAlphanumeric = false;
                     options.Password.RequireUppercase = false;
                 })
+                    .AddRoles<IdentityRole>()
                    .AddEntityFrameworkStores<DevBoostDbContext>();
-
-            //builder.Services.AddDefaultIdentity<User>
-            //    (options =>
-            //    {
-            //        options.SignIn.RequireConfirmedAccount = false;
-            //        options.Password.RequireDigit = false;
-            //        options.Password.RequireLowercase = false;
-            //        options.Password.RequireNonAlphanumeric = false;
-            //        options.Password.RequireUppercase = false;
-            //    })
-            //    .AddRoles<IdentityRole>()
-            //    .AddEntityFrameworkStores<DevBoostDbContext>();
 
             builder.Services.AddControllersWithViews(options =>
             {

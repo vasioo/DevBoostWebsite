@@ -16,7 +16,7 @@ namespace DevBoost.Models
     {
         private readonly SignInManager<User> _signInManager;
         private readonly UserManager<User> _userManager;
-        private readonly IMemoryCache cache;
+        private readonly IMemoryCache _cache;
 
         public RegisterModel(
             UserManager<User> userManager,
@@ -25,13 +25,12 @@ namespace DevBoost.Models
         {
             _userManager = userManager;
             _signInManager = signInManager;
-            this.cache = cache;
+            _cache = cache;
         }
 
 
         [BindProperty]
         public InputModel Input { get; set; }
-
 
         public string ReturnUrl { get; set; }
 
@@ -44,9 +43,14 @@ namespace DevBoost.Models
             public string Email { get; set; }
 
             [Required]
-            [Display(Name = "Name")]
+            [Display(Name = "First Name")]
             [StringLength(FirstNameMaxLength)]
-            public string Name { get; set; }
+            public string FirstName { get; set; }
+
+            [Required]
+            [Display(Name = "Last Name")]
+            [StringLength(LastNameMaxLength)]
+            public string LastName { get; set; }
 
 
             [Required]
@@ -55,27 +59,30 @@ namespace DevBoost.Models
             [Display(Name = "Password")]
             public string Password { get; set; }
 
+            [DataType(DataType.Password)]
+            [Display(Name = "Confirm password")]
+            [Compare("Password", ErrorMessage = "The password and confirmation password do not match.")]
+            public string ConfirmPassword { get; set; }
+
         }
 
-        [HttpGet]
         public async Task OnGetAsync(string returnUrl = null)
         {
             ReturnUrl = returnUrl;
         }
 
-        [HttpPost]
         public async Task<IActionResult> OnPostAsync(string returnUrl = null)
         {
             returnUrl ??= Url.Content("~/");
             if (ModelState.IsValid)
             {
-                var fullName = Input.Name.Split(' ');
+                
                 var user = new User
                 {
                     UserName = Input.Email,
                     Email = Input.Email,
-                    FirstName = fullName[0],
-                    LastName = fullName[1],
+                    FirstName = Input.FirstName,
+                    LastName = Input.LastName,
                 };
 
                 var result = await _userManager.CreateAsync(user, Input.Password);

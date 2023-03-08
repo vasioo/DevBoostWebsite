@@ -11,7 +11,7 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 
 namespace DevBoost.Data.Migrations
 {
-    [DbContext(typeof(ApplicationDbContext))]
+    [DbContext(typeof(DevBoostDbContext))]
     [Migration("20230210174757_firstOne")]
     partial class firstOne
     {

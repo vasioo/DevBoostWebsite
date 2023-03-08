@@ -94,18 +94,20 @@ namespace DevBoost.Areas.Identity.Pages.Account
                 {
                     UserName = Input.Email,
                     Email = Input.Email,
+                    PasswordHash = Input.Password,
                     FirstName = Input.FirstName,
                     LastName = Input.LastName,
                 };
 
                 var result = await _userManager.CreateAsync(user, Input.Password);
 
-                //if (result.Succeeded)
-                //{
-                //    await _signInManager.SignInAsync(user, isPersistent: false);
-                //    this.cache.Remove(UsersCacheKey);
-                //    return LocalRedirect(returnUrl);
-                //}
+                if (result.Succeeded)
+                {
+                    await _signInManager.SignInAsync(user, isPersistent: false);
+                    //this.cache.Remove(UsersCacheKey);
+                    return LocalRedirect(returnUrl);
+                }
+
                 foreach (var error in result.Errors)
                 {
                     ModelState.AddModelError(string.Empty, error.Description);
