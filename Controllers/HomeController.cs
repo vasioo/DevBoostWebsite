@@ -43,7 +43,7 @@ namespace DevBoost.Controllers
         [HttpGet]
         public IActionResult Help()
         {
-            return View("~/Views/Home/Navigation/Help.cshtml");
+            return View("~/Views/Home/Navigation/HelpMe.cshtml");
         }
 
         public IActionResult Entering()
@@ -56,5 +56,11 @@ namespace DevBoost.Controllers
         {
             return View(new ErrorViewModel { RequestId = Activity.Current?.Id ?? HttpContext.TraceIdentifier });
         }
-    }
+
+        [HttpPost]
+		public IActionResult Help(HelpMe hp)
+		{
+			return View("~/Views/Home/Errors/StillBuilding.cshtml");
+		}
+	}
 }
