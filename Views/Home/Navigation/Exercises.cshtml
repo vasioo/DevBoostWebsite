@@ -1,7 +1,15 @@
-﻿@{
+﻿@using DevBoost.Areas.Identity.Pages.Account;
+@model LoginModel
+
+@{
     ViewData["Title"] = "Exercises";
 }
 <style>
+    .SecondOption {
+        background-image: url("/buggy (1).png");
+        background-color: #cccccc;
+    }
+
     #categories {
         font-size: x-large;
     }
@@ -21,8 +29,8 @@
 
     #maintitle {
         padding-top: 50px;
-    } 
-    
+    }
+
     #mainTitle2 {
         padding-top: 100px;
     }
@@ -63,32 +71,34 @@
         height: 4px;
     }
 </style>
-<h1>Practice your skills with our modified page</h1>
-<hr id="horizontalLine" />
+@if (this.User.Identity.IsAuthenticated)
+{
+    <h1>Practice your skills with our modified page</h1>
+    <hr id="horizontalLine" />
 
 
-<div class="container-fluid">
-    <div class="row">
-        <div class="col-lg-6" id="maintitle">
-            <div class="col-md-10" id="main">
-                <h1 >Categories</h1>
-                <div id="categories" class="list-group">
-                    <a class="list-group-item" asp-area="" asp-controller="Exercises" asp-action="HTMLCSS">HTML & CSS</a>
-                    <a class="list-group-item" asp-area="" asp-controller="Exercises" asp-action="JavascriptBeginning">Javascript Beginning</a>
-                    <a class="list-group-item" asp-area="" asp-controller="Exercises" asp-action="CSharpHigh">High Level C#</a>
-                    <a class="list-group-item" asp-area="" asp-controller="Exercises" asp-action="ASP">ASP.NET</a>
-                    <a class="list-group-item" asp-area="" asp-controller="Exercises" asp-action="DSA">Data Structures & Algorithms</a>
-                    <a class="list-group-item" asp-area="" asp-controller="Exercises" asp-action="JavascriptHigh">Advanced Javascript</a>
-                    <a class="list-group-item" asp-area="" asp-controller="Exercises" asp-action="Bootstrap">Bootstrap</a>
-                    <a class="list-group-item" asp-area="" asp-controller="Exercises" asp-action="ReactJS">ReactJS</a>
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-lg-6" id="maintitle">
+                <div class="col-md-10" id="main">
+                    <h1>Categories</h1>
+                    <div id="categories" class="list-group">
+                        <a class="list-group-item" asp-area="" asp-controller="Exercises" asp-action="HTMLCSS">HTML & CSS</a>
+                        <a class="list-group-item" asp-area="" asp-controller="Exercises" asp-action="JavascriptBeginning">Javascript Beginning</a>
+                        <a class="list-group-item" asp-area="" asp-controller="Exercises" asp-action="CSharpHigh">High Level C#</a>
+                        <a class="list-group-item" asp-area="" asp-controller="Exercises" asp-action="ASP">ASP.NET</a>
+                        <a class="list-group-item" asp-area="" asp-controller="Exercises" asp-action="DSA">Data Structures & Algorithms</a>
+                        <a class="list-group-item" asp-area="" asp-controller="Exercises" asp-action="JavascriptHigh">Advanced Javascript</a>
+                        <a class="list-group-item" asp-area="" asp-controller="Exercises" asp-action="Bootstrap">Bootstrap</a>
+                        <a class="list-group-item" asp-area="" asp-controller="Exercises" asp-action="ReactJS">ReactJS</a>
+                    </div>
+                </div>
+                <div id="addbtn">
+                    <button type="button" onclick="location.href='@Url.Action("Add","Exercises")'">Add a task</button>
                 </div>
             </div>
-            <div id="addbtn">
-                <button type="button" onclick="location.href='@Url.Action("Add","Exercises")'">Add a task</button>
-            </div>
-        </div>
-        <div class="col-lg-6 d-flex justify-content-end" id="mainTitle2">
-            <iframe width="600px" height="380px" src="https://www.youtube.com/embed/8mAITcNt710"
+            <div class="col-lg-6 d-flex justify-content-end" id="mainTitle2">
+                <iframe width="600px" height="380px" src="https://www.youtube.com/embed/8mAITcNt710"
                     title="YouTube video player"
                     frameborder="0"
                     allow="accelerometer;
@@ -96,6 +106,19 @@
             encrypted-media; gyroscope;
             picture-in-picture; web-share"
                     allowfullscreen></iframe>
+            </div>
         </div>
     </div>
-</div>
+}
+
+else
+{
+    <h1>The service you are looking for is unavailable due to:</h1>
+    <h2>
+        <ul>
+            <li>Not signed in</li>
+            <li>Error in the system</li>
+            <li>Old version of browser</li>
+        </ul>
+    </h2>
+}

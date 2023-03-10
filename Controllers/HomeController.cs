@@ -46,10 +46,6 @@ namespace DevBoost.Controllers
             return View("~/Views/Home/Navigation/HelpMe.cshtml");
         }
 
-        public IActionResult Entering()
-        {
-            return View("~/Views/Home/Navigation/Entering.cshtml");
-        }
 
         [ResponseCache(Duration = 0, Location = ResponseCacheLocation.None, NoStore = true)]
         public IActionResult Error()
