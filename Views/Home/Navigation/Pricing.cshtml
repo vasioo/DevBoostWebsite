@@ -8,7 +8,7 @@
         padding: 0;
         box-sizing: border-box;
         font-family: 'Poppins',sans-serif;
-        background:inherit;
+        background: inherit;
     }
 
     .my_container {
@@ -65,7 +65,7 @@
             color: #ddd;
             list-style: none;
             background: #2D033B;
-            padding:0;
+            padding: 0;
         }
 
             .my_price-col ul li {
@@ -98,7 +98,6 @@
             }
 </style>
 
-
 <div class="my_container">
     <h2>Choose your plan</h2>
 
@@ -115,7 +114,9 @@
                 <li>Introduction to C#</li>
                 <li>More advanced programming</li>
             </ul>
-            <button type="button" onclick="location.href='@Url.Action("Purchasing","Pricing")'">Purchase</button>
+            <form method="post">
+                <button type="submit" name="whichButton" value="1" onclick="location.href='@Url.Action("Purchasing","Pricing")'">Purchase</button>
+            </form>
         </div>
 
         <div class="my_price-col">
@@ -129,7 +130,9 @@
                 <li>High-level C#</li>
                 <li>Introduction to ASP.NET</li>
             </ul>
-            <button type="button" onclick="location.href='@Url.Action("Purchasing","Pricing")'">Purchase</button>
+            <form method="post">
+                <button type="submit" name="whichButton" value="2" onclick="location.href='@Url.Action("Purchasing","Pricing")'">Purchase</button>
+            </form>
         </div>
 
         <div class="my_price-col">
@@ -143,7 +146,9 @@
                 <li>Git/GitHub</li>
                 <li>Docker & Azure</li>
             </ul>
-            <button type="button" onclick="location.href='@Url.Action("Purchasing","Pricing")'">Purchase</button>
+            <form method="post">
+                <button type="submit" name="whichButton" value="3" onclick="location.href='@Url.Action("Purchasing","Pricing")'">Purchase</button>
+            </form>
         </div>
 
     </div>

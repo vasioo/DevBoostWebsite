@@ -3,182 +3,200 @@
 }
 
 <style>
-*{
-  font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
-  font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
-  margin:0;
-  padding:0;
-  box-sizing: border-box;
-  outline: none; 
-  border:none;
-  text-transform: capitalize;
-  transition: all .2s linear;
-}
+    * {
+        font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+        font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+        outline: none;
+        border: none;
+        text-transform: capitalize;
+        transition: all .2s linear;
+    }
 
-    .my_container{
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  padding:25px;
-  min-height: 100vh;
-  background: rgb(62,39,94);
-  background: radial-gradient(circle, rgba(62,39,94,1) 26%, rgba(0,0,0,1) 69%, rgba(0,0,0,1) 92%);
-}
+    #bagText {
+        color:green;
+    }
 
-.my_container form{
-  padding:20px;
-  width:960px;
-  background: #000;
-  box-shadow: 0 5px 10px rgba(0,0,0,.1);
-}
+    .my_container {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        padding: 25px;
+        min-height: 100vh;
+        background: rgb(62,39,94);
+        background: radial-gradient(circle, rgba(62,39,94,1) 26%, rgba(0,0,0,1) 69%, rgba(0,0,0,1) 92%);
+    }
 
-.my_container form .my_row{
-  display: flex;
-  flex-wrap: wrap;
-  gap:15px;
-}
+        .my_container form {
+            padding: 20px;
+            width: 960px;
+            background: #000;
+            box-shadow: 0 5px 10px rgba(0,0,0,.1);
+        }
 
-.my_container form .my_row .my_col{
-  flex:1 1 250px;
-}
+            .my_container form .my_row {
+                display: flex;
+                flex-wrap: wrap;
+                gap: 15px;
+            }
 
-.my_container form .my_row .my_col .my_title{
-  font-size: 20px;
-  color:#333;
-  padding-bottom: 5px;
-  text-transform: uppercase;
-}
+                .my_container form .my_row .my_col {
+                    flex: 1 1 250px;
+                }
 
-.my_container form .my_row .my_col .my_inputBox{
-  margin:15px 0;
-}
+                    .my_container form .my_row .my_col .my_title {
+                        font-size: 20px;
+                        color: #333;
+                        padding-bottom: 5px;
+                        text-transform: uppercase;
+                    }
 
-.my_container form .my_row .my_col .my_inputBox span{
-  margin-bottom: 10px;
-  display: block;
-}
+                    .my_container form .my_row .my_col .my_inputBox {
+                        margin: 15px 0;
+                    }
 
-.my_container form .my_row .my_col .my_inputBox input{
-  width: 100%;
-  border:1px solid #ccc;
-  padding:10px 15px;
-  font-size: 15px;
-  text-transform: none;
-}
+                        .my_container form .my_row .my_col .my_inputBox span {
+                            margin-bottom: 10px;
+                            display: block;
+                        }
 
-.my_container form .my_row .my_col .my_inputBox input:focus{
-  border:1px solid #000;
-}
+                        .my_container form .my_row .my_col .my_inputBox input {
+                            width: 100%;
+                            border: 1px solid #ccc;
+                            padding: 10px 15px;
+                            font-size: 15px;
+                            text-transform: none;
+                        }
 
-.my_container form .my_row .my_col .my_flex{
-  display: flex;
-  gap:15px;
-}
+                            .my_container form .my_row .my_col .my_inputBox input:focus {
+                                border: 1px solid #000;
+                            }
 
-.my_container form .my_row .my_col .my_flex .my_inputBox{
-  margin-top: 5px;
-}
+                    .my_container form .my_row .my_col .my_flex {
+                        display: flex;
+                        gap: 15px;
+                    }
 
-.my_container form .my_row .my_col .my_inputBox img{
-  height: 34px;
-  margin-top: 5px;
-  filter: drop-shadow(0 0 1px #000);
-  margin-bottom:5px;
-}
+                        .my_container form .my_row .my_col .my_flex .my_inputBox {
+                            margin-top: 5px;
+                        }
 
-.my_container form .my_submit-btn{
-  width: 100%;
-  padding:12px;
-  font-size: 17px;
-  background: #27ae60;
-  color:#fff;
-  margin-top: 5px;
-  cursor: pointer;
-}
+                    .my_container form .my_row .my_col .my_inputBox img {
+                        height: 34px;
+                        margin-top: 5px;
+                        filter: drop-shadow(0 0 1px #000);
+                        margin-bottom: 5px;
+                    }
 
-    .my_container form .submit-btn:hover{
-  background: #2ecc71;
-}
+            .my_container form .my_submit-btn {
+                width: 100%;
+                padding: 12px;
+                font-size: 17px;
+                background: #27ae60;
+                color: #fff;
+                margin-top: 5px;
+                cursor: pointer;
+            }
+
+            .my_container form .submit-btn:hover {
+                background: #2ecc71;
+            }
+
+    .float-child.one {
+        margin-right: 20px;
+        text-align:center;
+    }
 </style>
 
-    <div class="my_container">
 
-        <form action="">
 
-            <div class="my_row">
+<div class="my_container">
 
-                <div class="my_col">
+    <div class="float-container">
+        <div id="bagText" class="float-child one">
+            <h1 style="font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;">Due amount:</h1><h2 id="bagText">$@ViewBag.Text</h2>
+        </div>
+        <div id="bagText" class="float-child two">
+            <form action="">
 
-                    <h3 class="my_title">billing address</h3>
 
-                    <div class="my_inputBox">
-                        <span>full name :</span>
-                        <input type="text" placeholder="Example Example" required>
-                    </div>
-                    <div class="my_inputBox">
-                        <span>email :</span>
-                    <input type="email" placeholder="example@example.com" required>
-                    </div>
-                    <div class="my_inputBox">
-                        <span>address :</span>
-                    <input type="text" placeholder="street" required>
-                    </div>
-                    <div class="my_inputBox">
-                        <span>city :</span>
-                    <input type="text" placeholder="Sofia" required>
-                    </div>
+                <div class="my_row">
 
-                    <div class="my_flex">
+                    <div class="my_col">
+
+                        <h3 class="my_title">billing address</h3>
+
                         <div class="my_inputBox">
-                            <span>state :</span>
-                        <input type="text" placeholder="Bulgaria" required>
+                            <span>full name :</span>
+                            <input type="text" placeholder="Example Example" required>
                         </div>
                         <div class="my_inputBox">
-                            <span>zip code :</span>
-                        <input type="text" placeholder="1000" required>
+                            <span>email :</span>
+                            <input type="email" placeholder="example@example.com" required>
                         </div>
+                        <div class="my_inputBox">
+                            <span>address :</span>
+                            <input type="text" placeholder="street" required>
+                        </div>
+                        <div class="my_inputBox">
+                            <span>city :</span>
+                            <input type="text" placeholder="Sofia" required>
+                        </div>
+
+                        <div class="my_flex">
+                            <div class="my_inputBox">
+                                <span>state :</span>
+                                <input type="text" placeholder="Bulgaria" required>
+                            </div>
+                            <div class="my_inputBox">
+                                <span>zip code :</span>
+                                <input type="text" placeholder="1000" required>
+                            </div>
+                        </div>
+
+                    </div>
+
+                    <div class="my_col">
+
+                        <h3 class="my_title">payment</h3>
+
+                        <div class="my_inputBox">
+                            <span>cards accepted :</span>
+                            <img src="~/card_img.png" alt="">
+                        </div>
+                        <div class="my_inputBox">
+                            <span>name on card :</span>
+                            <input type="text" placeholder="Mr. Example" required>
+                        </div>
+                        <div class="my_inputBox">
+                            <span>credit card number :</span>
+                            <input type="number" placeholder="1111-2222-3333-4444" required>
+                        </div>
+                        <div class="my_inputBox">
+                            <span>exp month :</span>
+                            <input type="text" placeholder="January" required>
+                        </div>
+
+                        <div class="my_flex">
+                            <div class="my_inputBox">
+                                <span>exp year :</span>
+                                <input type="number" placeholder="2023" required>
+                            </div>
+                            <div class="my_inputBox">
+                                <span>CVV :</span>
+                                <input type="text" placeholder="1234" required>
+                            </div>
+                        </div>
+
                     </div>
 
                 </div>
 
-                <div class="my_col">
+                <input type="submit" value="Purchase" class="my_submit-btn">
 
-                    <h3 class="my_title">payment</h3>
-
-                    <div class="my_inputBox">
-                        <span>cards accepted :</span>
-                        <img src="~/card_img.png" alt="">
-                    </div>
-                    <div class="my_inputBox">
-                        <span>name on card :</span>
-                    <input type="text" placeholder="Mr. Example"required>
-                    </div>
-                    <div class="my_inputBox">
-                        <span>credit card number :</span>
-                    <input type="number" placeholder="1111-2222-3333-4444" required>
-                    </div>
-                    <div class="my_inputBox">
-                        <span>exp month :</span>
-                    <input type="text" placeholder="January" required>
-                    </div>
-
-                    <div class="my_flex">
-                        <div class="my_inputBox">
-                            <span>exp year :</span>
-                        <input type="number" placeholder="2023" required>
-                        </div>
-                        <div class="my_inputBox">
-                            <span>CVV :</span>
-                        <input type="text" placeholder="1234" required>
-                        </div>
-                    </div>
-
-                </div>
-
-            </div>
-
-            <input type="submit" value="Purchase" class="my_submit-btn">
-
-        </form>
-
+            </form>
+        </div>
     </div>
+</div>

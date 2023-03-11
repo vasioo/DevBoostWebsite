@@ -12,14 +12,15 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" />
     <style>
 
-        .mynav_links{
-            color:white;
+        .mynav_links {
+            color: white;
         }
-        *{
+
+        * {
             background-color: #000000;
             color: white;
         }
- 
+
         .mynav_navbar {
             overflow: hidden;
             font-family: Arial,Helvetica,sans-serif;
@@ -28,7 +29,7 @@
             font-size: 20px;
         }
 
-            .mynav_navbar a/* button */{
+            .mynav_navbar a /* button */ {
                 float: left;
                 color: white;
                 text-align: center;
@@ -42,7 +43,7 @@
             overflow: hidden;
             font-size: 20px;
             color: white;
-            background:#000000;
+            background: #000000;
         }
 
             .mynav_dropdown .mynav_dropbtn {
@@ -54,10 +55,10 @@
                 background-color: inherit;
                 font-family: inherit;
                 margin: 0;
-                background:#000000;
+                background: #000000;
             }
 
-            .mynav_navbar a:hover,.mynav_dropdown:hover .mynav_dropbtn {
+            .mynav_navbar a:hover, .mynav_dropdown:hover .mynav_dropbtn {
                 background-color: #2D033B;
                 border-radius: 6px;
                 font-size: 20px;
@@ -111,8 +112,11 @@
                 </button>
                 <div class="navbar-collapse collapse d-sm-inline-flex justify-content-between">
                     <div class="mynav_navbar">
-                        
-                        <a class="nav-link text-white" asp-area="" asp-controller="Home" asp-action="Exercises">Exercises</a>
+
+                        @if (this.User.Identity.IsAuthenticated)
+                        {
+                            <a class="nav-link text-white" asp-area="" asp-controller="Home" asp-action="Exercises">Exercises</a>
+                        }
                         <a class="nav-link text-white" asp-area="" asp-controller="Home" asp-action="Pricing">Pricing</a>
 
                         <div class="mynav_dropdown">
@@ -131,7 +135,7 @@
                     <partial name="_LoginPartial" />
                 </div>
             </div>
-           
+
         </nav>
     </header>
     <div class="container">

@@ -3,6 +3,8 @@ using Microsoft.AspNetCore.Mvc;
 using System.Diagnostics;
 using System.Net.Mail;
 using System.Net;
+using Microsoft.AspNetCore.Http;
+using Microsoft.AspNetCore.Authorization;
 
 namespace DevBoost.Controllers
 {
@@ -25,6 +27,7 @@ namespace DevBoost.Controllers
             return View("~/Views/Home/Navigation/Privacy.cshtml");
         }
 
+        [Authorize]
         public IActionResult Exercises()
         {
             return View("~/Views/Home/Navigation/Exercises.cshtml");
@@ -40,6 +43,25 @@ namespace DevBoost.Controllers
             return View("~/Views/Home/Navigation/Pricing.cshtml");
         }
 
+        [HttpPost]
+        public IActionResult Pricing(string whichButton)
+        {
+            switch (whichButton)
+            {
+                case "1":
+                    ViewBag.Text = "9.99/once +VAT";
+                    break;
+                case "2":
+                    ViewBag.Text = "17.98/month +VAT";
+                    break;
+                case "3":
+                    ViewBag.Text = "49.95/month +VAT";
+                    break;
+            }
+            return View("~/Views/Pricing/Purchasing.cshtml");
+        }
+
+
         [HttpGet]
         public IActionResult Help()
         {
@@ -47,10 +69,10 @@ namespace DevBoost.Controllers
         }
 
 
-        [ResponseCache(Duration = 0, Location = ResponseCacheLocation.None, NoStore = true)]
+        //[ResponseCache(Duration = 0, Location = ResponseCacheLocation.None, NoStore = true)]
         public IActionResult Error()
         {
-            return View(new ErrorViewModel { RequestId = Activity.Current?.Id ?? HttpContext.TraceIdentifier });
+            return View();
         }
 
         [HttpPost]

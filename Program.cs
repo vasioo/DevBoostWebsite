@@ -57,10 +57,14 @@ namespace DevBoost
             }
             else
             {
-                app.UseExceptionHandler("/Home/Error");
-                app.UseStatusCodePagesWithRedirects("/Errors/Error?statusCode={0}");
+                //app.UseExceptionHandler("/Home/Error/500");
+              
+                //app.UseHsts();
+                app.UseExceptionHandler("/Error");
                 app.UseHsts();
             }
+
+            app.UseStatusCodePagesWithRedirects("/Home/Error?statusCode={0}");
 
             app.UseHttpsRedirection();
             app.UseStaticFiles();

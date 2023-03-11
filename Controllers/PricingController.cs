@@ -1,4 +1,5 @@
 ﻿using Microsoft.AspNetCore.Mvc;
+using System;
 
 namespace DevBoost.Controllers
 {
@@ -10,6 +11,11 @@ namespace DevBoost.Controllers
         {
             _logger = logger;
         }
+
+        public string Item { get; set; }
+
+
+        [HttpGet]
         public IActionResult Purchasing()
         {
             return View();
