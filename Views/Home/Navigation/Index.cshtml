@@ -2,18 +2,148 @@
     ViewData["Title"] = "Home Page";
 }
 
+<style>
+
+    * {
+        background: none;
+    }
+
+    body {
+        width: 100%;
+        min-height: 100vh;
+        background: rgb(48,23,64);
+        background: linear-gradient(180deg, rgba(48,23,64,1) 20%, rgba(0,0,0,1) 35%);
+    }
+
+    .card-row {
+        display: flex;
+        justify-content: space-between;
+        margin: 0 -10px;
+        color: black;
+    }
+
+    .card-container {
+        width: calc(33.33% - 20px); 
+        margin: 0 10px;
+        color: black;
+    }
+
+    .card {
+        width: 100%;
+        height: 200px;
+        position: relative;
+        transform-style: preserve-3d;
+        transition: transform 0.5s ease;
+        cursor: pointer;
+        color: black;
+    }
+
+        .card.is-flipped {
+            transform: rotateY(180deg);
+            color: black;
+        }
+
+    .card-front, .card-back {
+        width: 100%;
+        height: 100%;
+        position: absolute;
+        top: 0;
+        left: 0;
+        backface-visibility: hidden;
+        color: black;
+    }
+
+    .card-back {
+        transform: rotateY(180deg);
+        color: black;
+    }
+
+    .card-container:not(:last-child)::after {
+        content: '';
+        position: absolute;
+        top: 0;
+        right: -10px; 
+        bottom: 0;
+        width: 10px; 
+        background-color: black; 
+        color: black;
+    }
+</style>
+
 
 @if (!this.User.Identity.IsAuthenticated)
 {
-    <h1>Programming courses for everyone</h1>
-    <ul>
-        <li>Start for only <a href="@Url.Action("Pricing","Home")" type="submit">I'm new here</a></li>
-        <li>Learn and experiment</li>
-        <li>Solve complex problems</li>
-    </ul>
+    <div class="text-center" id="my_container">
+        <h1>Not in DevBoost?</h1>
+        <hr>
+        <br>
+        <h4>Start for only <a href="@Url.Action("Pricing","Home")" type="submit">$9.99</a></h4>
+        <h4>Learn and experiment</h4>
+        <h4>Solve complex problems</h4>
+
+        <br><br><br><br>
+
+        <div class="card-row">
+            <div class="card-container">
+                <div class="card">
+                    <div class="card-front">
+
+                        <h2 class="text-black">What is this website?</h2>
+                    </div>
+                    <div class="card-back">
+                        <h2 class="text-black">Card 2</h2>
+                      
+                    </div>
+                </div>
+            </div>
+            <div class="card-container">
+                <div class="card">
+                    <div class="card-front">
+                        <h2 class="text-black">Who developed it?</h2>
+                    </div>
+                    <div class="card-back">
+                        <h2 class="text-black">Card 2</h2>
+                        <p class="text-black">Back of card 2</p>
+                    </div>
+                </div>
+            </div>
+            <div class="card-container">
+                <div class="card">
+                    <div class="card-front">
+                        <h2 class="text-black">Who can use it?</h2>
+                    </div>
+                    <div class="card-back">
+                        <h2 class="text-black">Card 2</h2>
+                        <p class="text-black">Back of card 2</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </div>
 }
 
 else
 {
-    <h1>Welcome</h1>
+    <div class="text-center">
+        <h1>Welcome @User.Identity.Name</h1>
+    </div>
 }
+
+
+ <script>
+    const cards = document.querySelectorAll('.card');
+
+    cards.forEach(card => {
+        card.addEventListener('click', () => {
+            cards.forEach(otherCard => {
+                if (otherCard !== card && otherCard.classList.contains('is-flipped')) {
+                    otherCard.classList.remove('is-flipped');
+                }
+            });
+
+            card.classList.toggle('is-flipped');
+        });
+    });
+
+</script>
