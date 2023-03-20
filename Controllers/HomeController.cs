@@ -80,5 +80,10 @@ namespace DevBoost.Controllers
 		{
 			return View("~/Views/Home/Errors/StillBuilding.cshtml");
 		}
-	}
+
+        public IActionResult Register()
+        {
+            return View("~/Areas/Identity/Pages/Account/Register.cshtml");
+        }
+    }
 }

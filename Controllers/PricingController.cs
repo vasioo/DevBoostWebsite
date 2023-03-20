@@ -1,4 +1,5 @@
-﻿using Microsoft.AspNetCore.Mvc;
+﻿using Microsoft.AspNetCore.Authorization;
+using Microsoft.AspNetCore.Mvc;
 using System;
 
 namespace DevBoost.Controllers
@@ -14,7 +15,7 @@ namespace DevBoost.Controllers
 
         public string Item { get; set; }
 
-
+        [Authorize]
         [HttpGet]
         public IActionResult Purchasing()
         {

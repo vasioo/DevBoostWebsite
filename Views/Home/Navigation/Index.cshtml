@@ -9,8 +9,6 @@
     }
 
     body {
-        width: 100%;
-        min-height: 100vh;
         background: rgb(48,23,64);
         background: linear-gradient(180deg, rgba(48,23,64,1) 20%, rgba(0,0,0,1) 35%);
     }
@@ -36,6 +34,8 @@
         transition: transform 0.5s ease;
         cursor: pointer;
         color: black;
+        background: rgb(48,23,64);
+        background: radial-gradient(circle, rgba(48,23,64,1) 79%, rgba(0,0,0,1) 100%);
     }
 
         .card.is-flipped {
@@ -86,35 +86,33 @@
         <div class="card-row">
             <div class="card-container">
                 <div class="card">
-                    <div class="card-front">
+                    <div class="card-front align-items-center d-flex justify-content-center">
 
-                        <h2 class="text-black">What is this website?</h2>
+                        <h2 class="text-white ">What is this website?</h2>
                     </div>
-                    <div class="card-back">
-                        <h2 class="text-black">Card 2</h2>
-                      
-                    </div>
-                </div>
-            </div>
-            <div class="card-container">
-                <div class="card">
-                    <div class="card-front">
-                        <h2 class="text-black">Who developed it?</h2>
-                    </div>
-                    <div class="card-back">
-                        <h2 class="text-black">Card 2</h2>
-                        <p class="text-black">Back of card 2</p>
+                    <div class="card-back align-items-center d-flex justify-content-center">
+                       <h3 class="text-white">This is a website that can help future software engineers expand their knowledge by solving algorithmic problems.</h3>
                     </div>
                 </div>
             </div>
             <div class="card-container">
                 <div class="card">
-                    <div class="card-front">
-                        <h2 class="text-black">Who can use it?</h2>
+                    <div class="card-front align-items-center d-flex justify-content-center">
+                        <h2 class="text-white">Who developed it?</h2>
                     </div>
-                    <div class="card-back">
-                        <h2 class="text-black">Card 2</h2>
-                        <p class="text-black">Back of card 2</p>
+                    <div class="card-back align-items-center d-flex justify-content-center">
+
+                        <h3 class="text-white">The website was developed by a dumb teenager that wanted to build his portfolio.</h3>
+                    </div>
+                </div>
+            </div>
+            <div class="card-container">
+                <div class="card">
+                    <div class="card-front align-items-center d-flex justify-content-center">
+                        <h2 class="text-white">Who can use it?</h2>
+                    </div>
+                    <div class="card-back align-items-center d-flex justify-content-center">
+                        <h3 class="text-white">Basically everyone that has the device to see that page!</h3>
                     </div>
                 </div>
             </div>

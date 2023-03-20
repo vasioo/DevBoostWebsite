@@ -1,5 +1,5 @@
 ﻿@{
-    ViewData["Title"] = "PricingController";
+    ViewData["Title"] = "Pricing";
 }
 
 <style>
@@ -114,9 +114,18 @@
                 <li>Introduction to C#</li>
                 <li>More advanced programming</li>
             </ul>
-            <form method="post">
-                <button type="submit" name="whichButton" value="1" onclick="location.href='@Url.Action("Purchasing","Pricing")'">Purchase</button>
-            </form>
+             @if (this.User.Identity.IsAuthenticated)
+            {
+                 <form method="post">
+                    <button type="submit" name="whichButton" value="3" onclick="location.href='@Url.Action("Purchasing","Pricing")'">Purchase</button>
+                </form>
+            }
+            else
+            {
+                 <form method="post">
+                    <button type="submit" name="whichButton" value="3" asp-area="" asp-controller="Home" asp-action="Exercises">Purchase</button>
+                </form>
+            }
         </div>
 
         <div class="my_price-col">
@@ -130,9 +139,18 @@
                 <li>High-level C#</li>
                 <li>Introduction to ASP.NET</li>
             </ul>
-            <form method="post">
-                <button type="submit" name="whichButton" value="2" onclick="location.href='@Url.Action("Purchasing","Pricing")'">Purchase</button>
-            </form>
+              @if (this.User.Identity.IsAuthenticated)
+            {
+                 <form method="post">
+                    <button type="submit" name="whichButton" value="3" onclick="location.href='@Url.Action("Purchasing","Pricing")'">Purchase</button>
+                </form>
+            }
+            else
+            {
+                 <form method="post">
+                    <button type="submit" name="whichButton" value="3" asp-area="" asp-controller="Home" asp-action="Exercises">Purchase</button>
+                </form>
+            }
         </div>
 
         <div class="my_price-col">
@@ -146,9 +164,19 @@
                 <li>Git/GitHub</li>
                 <li>Docker & Azure</li>
             </ul>
-            <form method="post">
-                <button type="submit" name="whichButton" value="3" onclick="location.href='@Url.Action("Purchasing","Pricing")'">Purchase</button>
-            </form>
+            @if (this.User.Identity.IsAuthenticated)
+            {
+                 <form method="post">
+                    <button type="submit" name="whichButton" value="3" onclick="location.href='@Url.Action("Purchasing","Pricing")'">Purchase</button>
+                </form>
+            }
+            else
+            {
+                 <form method="post">
+                    <button type="submit" name="whichButton" value="3" asp-area="" asp-controller="Home" asp-action="Exercises">Purchase</button>
+                </form>
+            }
+
         </div>
 
     </div>
