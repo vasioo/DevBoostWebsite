@@ -2,6 +2,8 @@
 using DevBoost.Data.DBContexts;
 using DevBoost.Models;
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.EntityFrameworkCore;
+using System.ComponentModel.DataAnnotations.Schema;
 
 namespace DevBoost.Controllers
 {

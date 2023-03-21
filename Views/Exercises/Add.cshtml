@@ -38,7 +38,7 @@
 
             <div class="form-group">
                 <label asp-for="Title"></label>
-                <input asp-for="Title" class="form-control" placeholder="Title..."></input>
+                <input asp-for="Title" class="form-control" required placeholder="Title..."></input>
                 <span asp-validation-for="Title" class="small text-danger"></span>
             </div>
 
@@ -58,23 +58,23 @@
 
             <div class="form-group">
                 <label asp-for="Name"></label>
-                <input asp-for="Name" class="form-control" placeholder="Name..."></input>
+                <input asp-for="Name" class="form-control" required placeholder="Name..."></input>
                 <span asp-validation-for="Name" class="small text-danger"></span>
             </div>
 
             <div class="form-group">
                 <label asp-for="Task"></label>
-                <textarea asp-for="Task" rows="6" class="form-control" placeholder="What is the task..."></textarea>
+                <textarea asp-for="Task" rows="6" class="form-control" required placeholder="What is the task..."></textarea>
                 <span asp-validation-for="Task" class="small text-danger"></span>
             </div>
             <div class="form-group">
                 <label asp-for="Input"></label>
-                <input asp-for="Input" class="form-control" placeholder="What should the person enter: ">
+                <input asp-for="Input" class="form-control" required placeholder="What should the person enter: ">
                 <span asp-validation-for="Input" class="small text-danger"></span>
             </div>
             <div class="form-group">
                 <label asp-for="Output"></label>
-                <input asp-for="Output" class="form-control" placeholder="What should the program return: ">
+                <input asp-for="Output" class="form-control" required placeholder="What should the program return: ">
                 <span asp-validation-for="Output" class="small text-danger"></span>
             </div>
             <div class="text-center">

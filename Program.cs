@@ -9,6 +9,7 @@ using DevBoost.Data.DBContexts;
 using Microsoft.AspNetCore.Mvc.Razor;
 using DevBoost.Data.MainAttributes;
 using Microsoft.AspNetCore.Mvc;
+using DevBoost.Data;
 
 namespace DevBoost
 {
@@ -17,7 +18,7 @@ namespace DevBoost
         public static void Main(string[] args)
         {
             var builder = WebApplication.CreateBuilder(args);
-
+                       
             var connectionString = builder
                 .Configuration
                 .GetConnectionString("DefaultConnection")

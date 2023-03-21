@@ -2,33 +2,68 @@
 @model Exercise
 
 <style>
-    .main h2{
+    .main h2 {
         color: #9F2B68;
     }
 
-    #task{
-        background:white;
-        color:black;
+    #task {
+        background: white;
+        color: black;
     }
 
-    #task1{
-        background:white;
-        color:black;
-        font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    #task1 {
+        background: white;
+        color: black;
+        font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
     }
+
+  .btn-like {
+  background-color: transparent;
+  border: none;
+  color: #555;
+  font-size: 16px;
+  line-height: 1;
+  padding: 0;
+  transition: color 0.2s ease-in-out;
+}
+
+.btn-like.liked {
+  color: #ff385c;
+}
+
+.btn-like i {
+  margin-right: 4px;
+}
+
+.btn-like span {
+  margin-left: 4px;
+}
 </style>
 
 <div class="col-md-4">
-    <div class="card mb-3">
+    <div class="card mb-3" data-id="@Model.Id">
         <div class="card-body text-center">
             <div class="main">
+                <div class="text-end">
+                    <button class="btn-like" onclick="like(this)" data-count="@Model.LikesCount">
+                        @if (Model.IsLiked)
+                        {
+                            <i class="bi bi-heart-fill"></i>
+                        }
+                        else
+                        {
+                            <i class="bi bi-heart"></i>
+                        }
+                        <span>@Model.LikesCount</span>
+                    </button>
+                </div>
                 <div class="card-body">
                     <h2 class="card-title">@Model.Title</h2>
                     <p class="card-text">@Model.Task</p>
                 </div>
             </div>
             <div class="mainItems">
-                <ul class="list-group list-group-flush" >
+                <ul class="list-group list-group-flush">
                     <li class="list-group-item"><h5 id="task1"><em id="task">Creator's Name:</em> @Model.Name</h3></li>
                     <li class="list-group-item"><h5 id="task1"><em id="task">Required Input:</em> @Model.Input</h3></li>
                     <li class="list-group-item"><h5 id="task1"><em id="task">Required Output:</em> @Model.Output</h3></li>
@@ -37,3 +72,30 @@
         </div>
     </div>
 </div>
+
+
+<script>
+    function like(button) {
+        var card = button.closest(".card");
+        var cardId = card.dataset.id;
+        var count = parseInt(button.dataset.count) || 0;
+        var likedCards = JSON.parse(sessionStorage.getItem("likedCards")) || {};
+        if (likedCards[cardId]) {
+            // Card is already liked; remove the like status
+            count--;
+            button.dataset.count = count;
+            button.classList.remove("liked");
+            button.innerHTML = "<i class='bi bi-heart'></i> " + count;
+            delete likedCards[cardId];
+        } else {
+            // Card is not liked; add the like status
+            count++;
+            button.dataset.count = count;
+            button.classList.add("liked");
+            button.innerHTML = "<i class='bi bi-heart-fill'></i> " + count;
+            likedCards[cardId] = true;
+        }
+        sessionStorage.setItem("likedCards", JSON.stringify(likedCards));
+    }
+
+</script>
