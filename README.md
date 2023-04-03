@@ -24,5 +24,5 @@
 <br>
 
 <br><br>
-P.s -> I am not a UX/UI designer nor a front-end developer. The main concept of the website is to show routing, working with databases and every possible back-end work.<br>
+P.s -> I am not a UX/UI designer nor a front-end specialist. The main concept of the website is to show routing, working with databases and every possible back-end work.<br>
 <h3>~The website is still in development~</h3>
