@@ -117,13 +117,13 @@
              @if (this.User.Identity.IsAuthenticated)
             {
                  <form method="post">
-                    <button type="submit" name="whichButton" value="3" onclick="location.href='@Url.Action("Purchasing","Pricing")'">Purchase</button>
+                    <button type="submit" name="whichButton" value="1" onclick="location.href='@Url.Action("Purchasing","Pricing")'">Purchase</button>
                 </form>
             }
             else
             {
                  <form method="post">
-                    <button type="submit" name="whichButton" value="3" asp-area="" asp-controller="Home" asp-action="Exercises">Purchase</button>
+                    <button type="submit" name="whichButton" value="1" asp-area="" asp-controller="Home" asp-action="Exercises">Purchase</button>
                 </form>
             }
         </div>
@@ -142,13 +142,13 @@
               @if (this.User.Identity.IsAuthenticated)
             {
                  <form method="post">
-                    <button type="submit" name="whichButton" value="3" onclick="location.href='@Url.Action("Purchasing","Pricing")'">Purchase</button>
+                    <button type="submit" name="whichButton" value="2" onclick="location.href='@Url.Action("Purchasing","Pricing")'">Purchase</button>
                 </form>
             }
             else
             {
                  <form method="post">
-                    <button type="submit" name="whichButton" value="3" asp-area="" asp-controller="Home" asp-action="Exercises">Purchase</button>
+                    <button type="submit" name="whichButton" value="2" asp-area="" asp-controller="Home" asp-action="Exercises">Purchase</button>
                 </form>
             }
         </div>
